@@ -1,6 +1,7 @@
-export class SamuraiButtonsConfig {
-	private _type: 'TEXT' | 'ICON' | 'TEXT-ICON' = 'TEXT';
-	private _style: 'FORMAL' | 'CASUAL' | 'SHARP' = 'FORMAL';
+export class SamuraiButtonConfig {
+	private _state: 'ENABLED' | 'DISABLED' = 'ENABLED';
+	private _variation: 'TEXT' | 'ICON' | 'TEXT-ICON' = 'TEXT';
+	private _style: 'NORMAL' | 'ROUND' | 'SHARP' | 'NONE' = 'NORMAL';
 	private _color: string = '#fff';
 	private _backgroundColor: string = '#000';
 	private _styleClasses: string = '';
@@ -10,19 +11,27 @@ export class SamuraiButtonsConfig {
 	private _width: string = 'fit-content';
 	private _height: string = 'fit-content';
 
-	public get type(): 'TEXT' | 'ICON' | 'TEXT-ICON' {
-		return this._type;
+	public get state(): 'ENABLED' | 'DISABLED' {
+		return this._state;
 	}
 
-	public set type(value: 'TEXT' | 'ICON' | 'TEXT-ICON') {
-		this._type = value;
+	public set state(value: 'ENABLED' | 'DISABLED') {
+		this._state = value;
 	}
 
-	public get style(): 'FORMAL' | 'CASUAL' | 'SHARP' {
+	public get variation(): 'TEXT' | 'ICON' | 'TEXT-ICON' {
+		return this._variation;
+	}
+
+	public set variation(value: 'TEXT' | 'ICON' | 'TEXT-ICON') {
+		this._variation = value;
+	}
+
+	public get style(): 'NORMAL' | 'ROUND' | 'SHARP' | 'NONE' {
 		return this._style;
 	}
 
-	public set style(value: 'FORMAL' | 'CASUAL' | 'SHARP') {
+	public set style(value: 'NORMAL' | 'ROUND' | 'SHARP' | 'NONE') {
 		this._style = value;
 	}
 
@@ -91,8 +100,9 @@ export class SamuraiButtonsConfig {
 	}
 
 	constructor(
-		type: 'TEXT' | 'ICON' | 'TEXT-ICON' = 'TEXT',
-		style: 'FORMAL' | 'CASUAL' | 'SHARP' = 'FORMAL',
+		state: 'ENABLED' | 'DISABLED' = 'ENABLED',
+		variation: 'TEXT' | 'ICON' | 'TEXT-ICON' = 'TEXT',
+		style: 'NORMAL' | 'ROUND' | 'SHARP' | 'NONE' = 'NORMAL',
 		color: string = '#fff',
 		backgroundColor: string = '#000',
 		styleClasses: string = '',
@@ -102,7 +112,8 @@ export class SamuraiButtonsConfig {
 		width: string = 'fit-content',
 		height: string = 'fit-content'
 	) {
-		this.type = type;
+		this.state = state;
+		this.variation = variation;
 		this.style = style;
 		this.color = color;
 		this.backgroundColor = backgroundColor;

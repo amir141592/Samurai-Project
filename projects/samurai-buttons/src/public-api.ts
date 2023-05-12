@@ -1,5 +1,5 @@
 /*
- * Public API Surface of samurai-buttons
+ * Public API Surface of samurai-button
  */
 
-export * from './lib/samurai-buttons.component';
+export * from './lib/samurai-button.component';

@@ -1,0 +1,7 @@
+<!-- [ngStyle]="{color, backgroundColor, width, height, borderWidth, borderStyle, borderColor, borderRadius, padding, fontStyle, fontVariant, fontWeight, fontSize, fontFamily}" -->
+<button #BUTTON [ngClass]="getClass(BUTTON)" (click)="$btnClick.emit(id)" (mouseenter)="setStyle(BUTTON)" (mouseleave)="removeStyle(BUTTON)">
+	<span class="before" style="background-color: red"></span>
+	<span class="material-icons{{ iconStyle == 'filled' ? '' : '-' + iconStyle }}" style="padding-right: 4px">{{ icon }}</span>
+	{{ text }}
+	<span class="after"></span>
+</button>

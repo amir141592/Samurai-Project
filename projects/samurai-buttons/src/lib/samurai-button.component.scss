@@ -1,0 +1,82 @@
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border: none;
+	transition: all 0.4s ease-in;
+	z-index: 1;
+	background-color: transparent;
+
+	.before,
+	.after {
+		position: absolute;
+		z-index: -1;
+	}
+}
+
+// ? LEFT_TO_RIGHT
+.left-to-right .before {
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0%;
+	transition: all 0.2s ease-in;
+}
+
+.left-to-right:hover .before {
+	width: 100%;
+}
+
+// ? SHUTTER_UP
+.shutter-up .before {
+	width: 100%;
+	height: 0%;
+	left: 0;
+	top: 0;
+	transition: all 0.2s ease-in;
+}
+
+.shutter-up:hover .before {
+	height: 100%;
+}
+
+// ? SHUTTER_DOWN
+.shutter-down .before {
+	width: 100%;
+	height: 0%;
+	left: 0;
+	bottom: 0;
+	transition: all 0.2s ease-in;
+}
+
+.shutter-down:hover .before {
+	height: 100%;
+}
+
+// ? SHINE
+.shine::after {
+	width: 100%;
+	height: 100%;
+	left: -35%;
+	top: 0;
+	transform: skew(50deg);
+	transition-duration: 0.6s;
+	transform-origin: top left;
+}
+
+.shine:hover::after {
+	transform: translateX(135%);
+}
+
+// ? NEON_BORDER
+.neon-border:hover {
+	border: 2px solid;
+	backdrop-filter: drop-shadow(0 0 8px);
+	background-color: transparent;
+}
+
+// ? FILL
+.fill:hover {
+	border: none;
+}
