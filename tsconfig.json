@@ -19,6 +19,17 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "paths": {
+      "samurai-buttons": [
+        "dist/samurai-buttons",
+        "dist/samurai-buttons",
+        "dist/samurai-buttons",
+        "dist/samurai-buttons"
+      ],
+      "test-lib": [
+        "dist/test-lib"
+      ]
+    },
     "lib": [
       "ES2022",
       "dom"
