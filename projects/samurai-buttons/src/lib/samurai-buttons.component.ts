@@ -12,7 +12,7 @@ import { SamuraiButtonsCustomConfig } from './custom-config.class';
 		[ngStyle]="{color, backgroundColor, width, height, borderWidth, borderStyle, borderColor, borderRadius, padding, fontStyle, fontVariant, fontWeight, fontSize, fontFamily}"
 		(click)="$btnClick.emit(id)"
 	>
-		<span class="material-icons-{{ iconStyle }}" style="padding-right: 4px">{{ icon }}</span>
+		<span class="material-icons{{ iconStyle == 'filled' ? '' : '-' + iconStyle }}" style="padding-right: 4px">{{ icon }}</span>
 		{{ text }}
 	</button>`,
 })
