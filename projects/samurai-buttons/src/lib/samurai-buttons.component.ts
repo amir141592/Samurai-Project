@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SamuraiButtonsConfig } from './config.class';
 import { SamuraiButtonsCustomConfig } from './custom-config.class';
@@ -8,8 +8,9 @@ import { SamuraiButtonsCustomConfig } from './custom-config.class';
 	standalone: true,
 	imports: [CommonModule],
 	template: `<button
-		[ngStyle]="{color, backgroundColor, width, height, borderWidth, borderStyle, borderColor, borderRadius, padding, fontStyle, fontVariant, fontWeight, fontSize, fontFamily}"
 		style="display: flex; justify-content: center; align-items: center;"
+		[ngStyle]="{color, backgroundColor, width, height, borderWidth, borderStyle, borderColor, borderRadius, padding, fontStyle, fontVariant, fontWeight, fontSize, fontFamily}"
+		(click)="$btnClick.emit(id)"
 	>
 		<span class="material-icons-{{ iconStyle }}" style="padding-right: 4px">{{ icon }}</span>
 		{{ text }}
@@ -37,4 +38,6 @@ export class SamuraiButtonsComponent {
 	@Input() fontWeight: string = '500';
 	@Input() fontSize: string = '24px';
 	@Input() fontFamily: string = 'initial';
+
+	@Output() $btnClick = new EventEmitter<string>(false);
 }
