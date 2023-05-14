@@ -54,21 +54,6 @@ button {
 	height: 100%;
 }
 
-// ? SHINE
-.shine::after {
-	width: 100%;
-	height: 100%;
-	left: -35%;
-	top: 0;
-	transform: skew(50deg);
-	transition-duration: 0.6s;
-	transform-origin: top left;
-}
-
-.shine:hover::after {
-	transform: translateX(135%);
-}
-
 // ? NEON_BORDER
 .neon-border:hover {
 	border: 2px solid;

@@ -20,7 +20,7 @@ export class SamuraiButtonsComponent {
 	@Input() state: 'ENABLED' | 'DISABLED' = 'ENABLED';
 	@Input() variation: 'TEXT' | 'ICON' | 'TEXT-ICON' = 'TEXT';
 	@Input() style: 'NORMAL' | 'ROUND' | 'SHARP' | 'NONE' = 'NORMAL';
-	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'DOOR' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'SHINE' | 'NEON_BORDER' | 'FILL' = 'SHINE';
+	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'DOOR' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' = 'NEON_BORDER';
 	@Input() text: string = 'Samurai';
 	@Input() icon: string = 'favorite';
 	@Input() iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
