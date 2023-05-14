@@ -53,15 +53,3 @@ button {
 .shutter-down:hover .before {
 	height: 100%;
 }
-
-// ? NEON_BORDER
-.neon-border:hover {
-	border: 2px solid;
-	backdrop-filter: drop-shadow(0 0 8px);
-	background-color: transparent;
-}
-
-// ? FILL
-.fill:hover {
-	border: none;
-}

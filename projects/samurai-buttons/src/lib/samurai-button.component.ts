@@ -16,16 +16,19 @@ export class SamuraiButtonsComponent {
 	@Input() config = new SamuraiButtonConfig();
 	@Input() customConfig = new SamuraiButtonsCustomConfig();
 
+	@Input() variation: 'FILLED' | 'OUTLINED' | 'TEXT' | 'ICON' = 'FILLED';
+	@Input() content: 'TEXT' | 'TEXT_ICON' = 'TEXT';
+	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'DOOR' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' = 'LEFT_TO_RIGHT';
+	@Input() borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
+	@Input() state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED';
+
 	@Input() id: string = '1';
-	@Input() state: 'ENABLED' | 'DISABLED' = 'ENABLED';
-	@Input() variation: 'TEXT' | 'ICON' | 'TEXT-ICON' = 'TEXT';
-	@Input() style: 'NORMAL' | 'ROUND' | 'SHARP' | 'NONE' = 'NORMAL';
-	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'DOOR' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' = 'NEON_BORDER';
 	@Input() text: string = 'Samurai';
 	@Input() icon: string = 'favorite';
 	@Input() iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
+
 	@Input() color: string = '#000';
-	@Input() backgroundColor: string = '#fff';
+	@Input() backgroundColor: string = 'orange';
 	@Input() shadowColor: string = '#666';
 	@Input() width: string = 'fit-content';
 	@Input() height: string = 'fit-content';
@@ -53,6 +56,19 @@ export class SamuraiButtonsComponent {
 				button.style.boxShadow = `0 0 5px ${this.shadowColor}, 0 0 25px ${this.shadowColor}, 0 0 50px ${this.shadowColor}, 0 0 200px ${this.shadowColor}`;
 				button.style.transform = `scale(110%)`;
 				break;
+
+			case 'NEON_BORDER':
+				button.style.color = this.color;
+				button.style.border = `2px solid ${this.color}`;
+				button.style.backdropFilter = `drop-shadow(0 0 8px ${this.color})`;
+				button.style.backgroundColor = 'transparent';
+				break;
+
+			case 'FILL':
+				button.style.color = `#fff`;
+				button.style.backgroundColor = this.backgroundColor;
+				button.style.border = `none`;
+				break;
 		}
 	}
 
@@ -66,6 +82,22 @@ export class SamuraiButtonsComponent {
 			case 'GLOW':
 				button.style.boxShadow = ``;
 				button.style.transform = `scale(100%)`;
+				break;
+
+			case 'NEON_BORDER':
+				if (this.variation == 'FILLED') {
+					button.style.backgroundColor = this.backgroundColor;
+					button.style.border = `none`;
+				} else if (this.variation == 'OUTLINED') button.style.backgroundColor = 'transparent';
+
+				button.style.color = this.color;
+				button.style.backdropFilter = ``;
+				break;
+
+			case 'FILL':
+				button.style.color = this.color;
+				button.style.backgroundColor = `transparent`;
+				button.style.border = `2px solid ${this.color}`;
 				break;
 		}
 	}
