@@ -22,7 +22,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 	@Input() content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT';
 	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'DOOR' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT';
 	@Input() borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
-	@Input() state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED';
+	@Input() state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED'; // ! not all states implemented yet
 
 	@Input() id: string = '1';
 	@Input() text: string = 'Samurai';
@@ -30,9 +30,10 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 	@Input() iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
 
 	@Input() color: string = '#000';
-	@Input() backgroundColor: string = 'orange';
-	@Input() shadowColor: string = 'orange';
+	@Input() backgroundColor: string = '#fff';
+	@Input() shadowColor: string = '#fff';
 	@Input() hoverColor: string = '#666';
+	@Input() effectSpeed: 'FAST' | 'NORMAL' | 'SLOW' = 'NORMAL'; // ! not implemented yet
 	@Input() direction: string = 'ltr';
 	@Input() width: string = 'fit-content';
 	@Input() height: string = 'fit-content';
@@ -66,7 +67,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 		switch (this.hoverStyle) {
 			case 'DOOR':
 				button.style.boxShadow = `inset -10.5em 0 0 0 ${this.hoverColor}, inset 10.5em 0 0 0 ${this.hoverColor}`;
-				button.style.color = this.backgroundColor;
+				// button.style.color = this.backgroundColor;
 				break;
 
 			case 'GLOW':
@@ -89,7 +90,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 		switch (this.hoverStyle) {
 			case 'DOOR':
 				button.style.boxShadow = ``;
-				button.style.color = this.color;
+				// button.style.color = this.color;
 				break;
 
 			case 'GLOW':
@@ -155,7 +156,13 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 				break;
 
 			case 'SHARP':
-				this.button.style.borderRadius = `${this.button.offsetHeight / 8}px`;
+				this.button.style.borderRadius = `${this.button.offsetHeight / 10}px`;
+				break;
+		}
+
+		switch (this.content) {
+			case 'ICON':
+				this.button.style.padding = '8px';
 				break;
 		}
 
