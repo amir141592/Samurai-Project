@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SamuraiButtonConfig } from './config.class';
 import { SamuraiButtonsCustomConfig } from './custom-config.class';
@@ -10,15 +10,17 @@ import { SamuraiButtonsCustomConfig } from './custom-config.class';
 	templateUrl: './samurai-button.component.html',
 	styleUrls: ['./samurai-button.component.scss'],
 })
-export class SamuraiButtonsComponent {
+export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
+	@ViewChild('BUTTON') button!: HTMLButtonElement;
+
 	@Input() preDefinedButton: 'PRIMARY' | 'ACCENT' | 'SUCCESS' | 'WARNING' | 'DANGER' = 'PRIMARY';
 
 	@Input() config = new SamuraiButtonConfig();
 	@Input() customConfig = new SamuraiButtonsCustomConfig();
 
-	@Input() variation: 'FILLED' | 'OUTLINED' | 'TEXT' | 'ICON' = 'FILLED';
-	@Input() content: 'TEXT' | 'TEXT_ICON' = 'TEXT';
-	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'DOOR' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' = 'LEFT_TO_RIGHT';
+	@Input() variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED';
+	@Input() content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT';
+	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'DOOR' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT';
 	@Input() borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
 	@Input() state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED';
 
@@ -29,7 +31,9 @@ export class SamuraiButtonsComponent {
 
 	@Input() color: string = '#000';
 	@Input() backgroundColor: string = 'orange';
-	@Input() shadowColor: string = '#666';
+	@Input() shadowColor: string = 'orange';
+	@Input() hoverColor: string = '#666';
+	@Input() direction: string = 'ltr';
 	@Input() width: string = 'fit-content';
 	@Input() height: string = 'fit-content';
 	@Input() borderWidth: string = '2px';
@@ -45,29 +49,38 @@ export class SamuraiButtonsComponent {
 
 	@Output() $btnClick = new EventEmitter<string>(false);
 
+	private getClass(): any {
+		switch (this.hoverStyle) {
+			case 'LEFT_TO_RIGHT':
+				return 'left-to-right';
+
+			case 'SHUTTER_UP':
+				return 'shutter-up';
+
+			case 'SHUTTER_DOWN':
+				return 'shutter-down';
+		}
+	}
+
 	public setStyle(button: HTMLButtonElement): void {
 		switch (this.hoverStyle) {
 			case 'DOOR':
-				button.style.boxShadow = `inset -10.5em 0 0 0 ${this.shadowColor}, inset 10.5em 0 0 0 ${this.shadowColor}`;
+				button.style.boxShadow = `inset -10.5em 0 0 0 ${this.hoverColor}, inset 10.5em 0 0 0 ${this.hoverColor}`;
 				button.style.color = this.backgroundColor;
 				break;
 
 			case 'GLOW':
-				button.style.boxShadow = `0 0 5px ${this.shadowColor}, 0 0 25px ${this.shadowColor}, 0 0 50px ${this.shadowColor}, 0 0 200px ${this.shadowColor}`;
+				button.style.boxShadow = `0 0 5px ${this.shadowColor}, 0 0 25px ${this.shadowColor}`;
 				button.style.transform = `scale(110%)`;
 				break;
 
 			case 'NEON_BORDER':
-				button.style.color = this.color;
-				button.style.border = `2px solid ${this.color}`;
-				button.style.backdropFilter = `drop-shadow(0 0 8px ${this.color})`;
-				button.style.backgroundColor = 'transparent';
+				button.style.filter = `drop-shadow(0 0 8px ${this.borderColor})`;
 				break;
 
 			case 'FILL':
-				button.style.color = `#fff`;
-				button.style.backgroundColor = this.backgroundColor;
-				button.style.border = `none`;
+				button.style.color = this.hoverColor;
+				button.style.backgroundColor = this.borderColor;
 				break;
 		}
 	}
@@ -85,36 +98,67 @@ export class SamuraiButtonsComponent {
 				break;
 
 			case 'NEON_BORDER':
-				if (this.variation == 'FILLED') {
-					button.style.backgroundColor = this.backgroundColor;
-					button.style.border = `none`;
-				} else if (this.variation == 'OUTLINED') button.style.backgroundColor = 'transparent';
-
-				button.style.color = this.color;
-				button.style.backdropFilter = ``;
+				button.style.filter = '';
 				break;
 
 			case 'FILL':
 				button.style.color = this.color;
 				button.style.backgroundColor = `transparent`;
-				button.style.border = `2px solid ${this.color}`;
 				break;
 		}
 	}
 
-	public getClass(button: HTMLButtonElement): string {
-		switch (this.hoverStyle) {
-			case 'LEFT_TO_RIGHT':
-				return 'left-to-right';
+	ngOnInit(): void {}
 
-			case 'SHUTTER_UP':
-				return 'shutter-up';
+	ngAfterViewInit(): void {
+		this.button = document.querySelector(`#button-${this.id}`) as HTMLButtonElement;
 
-			case 'SHUTTER_DOWN':
-				return 'shutter-down';
+		switch (this.state) {
+			case 'ENABLED':
+				switch (this.variation) {
+					case 'FILLED':
+						this.button.style.border = 'none';
+						break;
 
-			default:
-				return '';
+					case 'OUTLINED':
+						this.button.style.backgroundColor = 'transparent';
+						break;
+
+					case 'CONTENT_ONLY':
+						this.button.style.border = 'none';
+						this.button.style.backgroundColor = 'transparent';
+						break;
+				}
+				break;
+
+			case 'DISABLED':
+				this.hoverStyle = 'NONE';
+				break;
+
+			case 'PENDING':
+				break;
+
+			case 'DONE':
+				break;
+
+			case 'FAILED':
+				break;
 		}
+
+		switch (this.borderAngle) {
+			case 'NORMAL':
+				this.button.style.borderRadius = `${this.button.offsetHeight / 5}px`;
+				break;
+
+			case 'ROUND':
+				this.button.style.borderRadius = `${this.button.offsetHeight / 2}px`;
+				break;
+
+			case 'SHARP':
+				this.button.style.borderRadius = `${this.button.offsetHeight / 8}px`;
+				break;
+		}
+
+		this.button.classList.add(this.getClass());
 	}
 }

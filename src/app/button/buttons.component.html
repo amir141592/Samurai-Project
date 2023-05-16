@@ -4,56 +4,106 @@
 	<div class="variation">
 		<h3>Variation</h3>
 
-		<samurai-button [variation]="'FILLED'"></samurai-button>
+		<samurai-button [id]="'1'" [text]="'Filled'" [backgroundColor]="'#64B5F6'" [variation]="'FILLED'" [hoverStyle]="'NONE'"></samurai-button>
 
-		<samurai-button [variation]="'OUTLINED'"></samurai-button>
+		<samurai-button
+			[id]="'2'"
+			[text]="'Outlined'"
+			[color]="'#9575CD'"
+			[borderColor]="'#9575CD'"
+			[variation]="'OUTLINED'"
+			[hoverStyle]="'NONE'"
+		></samurai-button>
 
-		<samurai-button [variation]="'TEXT'"></samurai-button>
-
-		<samurai-button [variation]="'ICON'"></samurai-button>
+		<samurai-button
+			[id]="'3'"
+			[text]="'Text'"
+			[color]="'#F06292'"
+			[variation]="'CONTENT_ONLY'"
+			[hoverStyle]="'NONE'"
+			[padding]="'0'"
+		></samurai-button>
 	</div>
 
 	<div class="content">
 		<h3>Content</h3>
 
-		<samurai-button [content]="'TEXT'"></samurai-button>
+		<samurai-button
+			[id]="'4'"
+			[text]="'Text'"
+			[backgroundColor]="'#64B5F6'"
+			[variation]="'FILLED'"
+			[content]="'TEXT'"
+			[hoverStyle]="'NONE'"
+		></samurai-button>
 
-		<samurai-button [content]="'TEXT_ICON'"></samurai-button>
+		<samurai-button
+			[id]="'5'"
+			[text]="'Text-Icon'"
+			[backgroundColor]="'#9575CD'"
+			[variation]="'FILLED'"
+			[content]="'TEXT_ICON'"
+			[hoverStyle]="'NONE'"
+		></samurai-button>
+
+		<samurai-button
+			[id]="'6'"
+			[text]="'Icon'"
+			[backgroundColor]="'#F06292'"
+			[variation]="'FILLED'"
+			[content]="'ICON'"
+			[hoverStyle]="'NONE'"
+		></samurai-button>
 	</div>
 
 	<div class="hover-style">
 		<h3>Hover Styles</h3>
 
-		<samurai-button [hoverStyle]="'LEFT_TO_RIGHT'"></samurai-button>
+		<samurai-button [id]="'7'" [text]="'Left To Right'" [backgroundColor]="'#64B5F6'" [hoverStyle]="'LEFT_TO_RIGHT'"></samurai-button>
 
-		<samurai-button [hoverStyle]="'DOOR'"></samurai-button>
+		<samurai-button [id]="'8'" [text]="'Door Open/Close'" [backgroundColor]="'#9575CD'" [hoverStyle]="'DOOR'"></samurai-button>
 
-		<samurai-button [hoverStyle]="'SHUTTER_UP'"></samurai-button>
+		<samurai-button [id]="'9'" [text]="'Shutter Up'" [backgroundColor]="'#F06292'" [hoverStyle]="'SHUTTER_UP'"></samurai-button>
 
-		<samurai-button [hoverStyle]="'SHUTTER_DOWN'"></samurai-button>
+		<samurai-button [id]="'10'" [text]="'Shutter Down'" [backgroundColor]="'#E57373'" [hoverStyle]="'SHUTTER_DOWN'"></samurai-button>
 
-		<samurai-button [hoverStyle]="'GLOW'"></samurai-button>
+		<samurai-button [id]="'11'" [text]="'Glow'" [backgroundColor]="'#4DD0E1'" [shadowColor]="'#4DD0E1'" [hoverStyle]="'GLOW'"></samurai-button>
 
-		<samurai-button [hoverStyle]="'NEON_BORDER'"></samurai-button>
+		<samurai-button
+			[id]="'12'"
+			[text]="'Neon'"
+			[color]="'#FF8A65'"
+			[borderColor]="'#FF8A65'"
+			[variation]="'OUTLINED'"
+			[hoverStyle]="'NEON_BORDER'"
+		></samurai-button>
 
-		<samurai-button [hoverStyle]="'FILL'"></samurai-button>
+		<samurai-button
+			[id]="'13'"
+			[text]="'Fill'"
+			[color]="'#DCE775'"
+			[hoverColor]="'#000'"
+			[borderColor]="'#DCE775'"
+			[variation]="'OUTLINED'"
+			[hoverStyle]="'FILL'"
+		></samurai-button>
 	</div>
 
 	<div class="border-angle">
 		<h3>Border Radius</h3>
 
-		<samurai-button [borderAngle]="'NORMAL'"></samurai-button>
+		<samurai-button [id]="'14'" [text]="'Normal'" [backgroundColor]="'#64B5F6'" [borderAngle]="'NORMAL'" [hoverStyle]="'NONE'"></samurai-button>
 
-		<samurai-button [borderAngle]="'ROUND'"></samurai-button>
+		<samurai-button [id]="'15'" [text]="'Round'" [backgroundColor]="'#9575CD'" [borderAngle]="'ROUND'" [hoverStyle]="'NONE'"></samurai-button>
 
-		<samurai-button [borderAngle]="'SHARP'"></samurai-button>
+		<samurai-button [id]="'16'" [text]="'Sharp'" [backgroundColor]="'#F06292'" [borderAngle]="'SHARP'" [hoverStyle]="'NONE'"></samurai-button>
 	</div>
 
 	<div class="states">
 		<h3>States</h3>
 
-		<samurai-button [state]="'ENABLED'"></samurai-button>
+		<samurai-button [id]="'17'" [text]="'Enabled'" [backgroundColor]="'#64B5F6'" [state]="'ENABLED'"></samurai-button>
 
-		<samurai-button [state]="'DISABLED'"></samurai-button>
+		<samurai-button [id]="'18'" [text]="'Disabled'" [backgroundColor]="'#9575CD'" [state]="'DISABLED'"></samurai-button>
 	</div>
 </div>
