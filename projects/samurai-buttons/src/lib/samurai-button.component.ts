@@ -20,11 +20,11 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 
 	@Input() variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED';
 	@Input() content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT';
-	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'DOOR' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT';
+	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT';
 	@Input() borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
 	@Input() state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED'; // ! not all states implemented yet
 
-	@Input() id: string = '1';
+	@Input({ required: true }) id: string = '1';
 	@Input() text: string = 'Samurai';
 	@Input() icon: string = 'favorite';
 	@Input() iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
@@ -65,9 +65,8 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 
 	public setStyle(button: HTMLButtonElement): void {
 		switch (this.hoverStyle) {
-			case 'DOOR':
+			case 'BOTH_SIDES':
 				button.style.boxShadow = `inset -10.5em 0 0 0 ${this.hoverColor}, inset 10.5em 0 0 0 ${this.hoverColor}`;
-				// button.style.color = this.backgroundColor;
 				break;
 
 			case 'GLOW':
@@ -88,9 +87,8 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 
 	public removeStyle(button: HTMLButtonElement): void {
 		switch (this.hoverStyle) {
-			case 'DOOR':
+			case 'BOTH_SIDES':
 				button.style.boxShadow = ``;
-				// button.style.color = this.color;
 				break;
 
 			case 'GLOW':
