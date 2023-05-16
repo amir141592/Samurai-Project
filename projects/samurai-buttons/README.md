@@ -32,7 +32,8 @@ In your component template add following tag:
 > `<samurai-button [id]="1" [text]="Samurai"></samurai-button>`
 
 To configure the button style you need to bind a value to one or  
-more of these properties in the tag:
+more of these properties in the tag, otherwise the default value will be used.  
+Refer to properties table below for values and defaults.
 
 - variation
 - content
@@ -75,13 +76,13 @@ more of these properties in the tag:
 	</thead>
 	<tbody>
 		<tr>
-			<td>id</td>
+			<td>id*</td>
 			<td>A unique id in the parent component (or all rendered components) for the button</td>
 			<td>any string</td>
 			<td><code>'1'</code></td>
 		</tr>
 		<tr>
-			<td>text</td>
+			<td>text*</td>
 			<td>Set button text</td>
 			<td>any string</td>
 			<td><code>'Samurai'</code></td>
@@ -154,6 +155,8 @@ more of these properties in the tag:
 		</tr>
 	</tbody>
 </table>
+
+\* Required property
 
 ## Related Resources
 
