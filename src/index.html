@@ -14,3 +14,94 @@
 		<samurai-root></samurai-root>
 	</body>
 </html>
+
+<table>
+	<thead>
+		<tr>
+			<th>Property</th>
+			<th>Description</th>
+			<th>Values</th>
+			<th>Default</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>id</td>
+			<td>A unique id in the parent component (or all rendered components) for the button</td>
+			<td>any string</td>
+			<td><code>'1'</code></td>
+		</tr>
+		<tr>
+			<td>text</td>
+			<td>Set button text</td>
+			<td>any string</td>
+			<td><code>'Samurai'</code></td>
+		</tr>
+		<tr>
+			<td>variation</td>
+			<td>Overall style of button based on UI/UX guidelines that controls emphesize and priority of the button</td>
+			<td><code>'FILLED'</code>, <code>'OUTLINED'</code>, <code>'CONTENT_ONLY'</code></td>
+			<td><code>'FILLED'</code></td>
+		</tr>
+		<tr>
+			<td>content</td>
+			<td>Set Content type of the button to be text, text and icon or just icon</td>
+			<td><code>'TEXT'</code>, <code>'TEXT_ICON'</code>, <code>'ICON'</code></td>
+			<td><code>'TEXT'</code></td>
+		</tr>
+		<tr>
+			<td>hoverStyle</td>
+			<td>Set button hover style. currently it has 7 different styles</td>
+			<td>
+				<code>'LEFT_TO_RIGHT'</code>, <code>'BOTH_SIDES'</code>, <code>'SHUTTER_UP'</code>, <code>'SHUTTER_DOWN'</code>, <code>'GLOW'</code>,
+				<code>'NEON_BORDER'</code>, <code>'FILL'</code>, <code>'NONE'</code>
+			</td>
+			<td><code>'LEFT_TO_RIGHT'</code></td>
+		</tr>
+		<tr>
+			<td>borderAngle</td>
+			<td>Set button border radius based on UI/UX guidelines</td>
+			<td><code>'NORMAL'</code>, <code>'ROUND'</code>, <code>'SHARP'</code></td>
+			<td><code>'NORMAL'</code></td>
+		</tr>
+		<tr>
+			<td>state</td>
+			<td>Set button state to either enabled or disabled. the disabled state will have no hover effect and has a gray shade over it</td>
+			<td><code>'ENABLED'</code>, <code>'DISABLED'</code></td>
+			<td><code>'ENABLED'</code></td>
+		</tr>
+		<tr>
+			<td>icon</td>
+			<td>
+				set button icon based on material icons names. Just pass icon name to this property. Refer to
+				<a href="https://fonts.google.com/icons?icon.set=Material+Icons" target="_blank" rel="noopener noreferrer">Material Icon Repository</a>
+			</td>
+			<td>Any Material Icon</td>
+			<td><code>'favorite'</code></td>
+		</tr>
+		<tr>
+			<td>iconStyle</td>
+			<td>Set icon style based on material icon styles</td>
+			<td><code>'filled'</code>, <code>'outlined'</code>, <code>'round'</code>, <code>'sharp'</code>, <code>'two-tone'</code></td>
+			<td><code>'filled'</code></td>
+		</tr>
+		<tr>
+			<td>color</td>
+			<td>Set text and icon color for the button</td>
+			<td>any color string in format of hexadecimal, RGB and HSL</td>
+			<td><code>'#000'</code></td>
+		</tr>
+		<tr>
+			<td>backgroundColor</td>
+			<td>Set background color of the button</td>
+			<td>any color string in format of hexadecimal, RGB and HSL</td>
+			<td><code>'#fff'</code></td>
+		</tr>
+		<tr>
+			<td>hoverColor</td>
+			<td>Set button hover effect color</td>
+			<td>any color string in format of hexadecimal, RGB and HSL</td>
+			<td><code>'#00a'</code></td>
+		</tr>
+	</tbody>
+</table>

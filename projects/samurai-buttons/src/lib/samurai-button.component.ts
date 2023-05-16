@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SamuraiButtonConfig } from './config.class';
 import { SamuraiButtonsCustomConfig } from './custom-config.class';
@@ -10,7 +10,7 @@ import { SamuraiButtonsCustomConfig } from './custom-config.class';
 	templateUrl: './samurai-button.component.html',
 	styleUrls: ['./samurai-button.component.scss'],
 })
-export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
+export class SamuraiButtonsComponent implements AfterViewInit {
 	@ViewChild('BUTTON') button!: HTMLButtonElement;
 
 	@Input() preDefinedButton: 'PRIMARY' | 'ACCENT' | 'SUCCESS' | 'WARNING' | 'DANGER' = 'PRIMARY';
@@ -25,14 +25,14 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 	@Input() state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED'; // ! not all states implemented yet
 
 	@Input({ required: true }) id: string = '1';
-	@Input() text: string = 'Samurai';
+	@Input({ required: true }) text: string = 'Samurai';
 	@Input() icon: string = 'favorite';
 	@Input() iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
 
 	@Input() color: string = '#000';
 	@Input() backgroundColor: string = '#fff';
 	@Input() shadowColor: string = '#fff';
-	@Input() hoverColor: string = '#666';
+	@Input() hoverColor: string = '#00a';
 	@Input() effectSpeed: 'FAST' | 'NORMAL' | 'SLOW' = 'NORMAL'; // ! not implemented yet
 	@Input() direction: string = 'ltr';
 	@Input() width: string = 'fit-content';
@@ -107,8 +107,6 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	ngOnInit(): void {}
-
 	ngAfterViewInit(): void {
 		this.button = document.querySelector(`#button-${this.id}`) as HTMLButtonElement;
 
@@ -165,5 +163,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit {
 		}
 
 		this.button.classList.add(this.getClass());
+
+		// this.button.style.boxShadow = `0 4px 12px ${this.backgroundColor}`;
 	}
 }

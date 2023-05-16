@@ -2,6 +2,7 @@
 	#BUTTON
 	id="button-{{ id }}"
 	[ngStyle]="{color, backgroundColor, width, height, borderWidth, borderStyle, borderColor, borderRadius, padding, fontStyle, fontVariant, fontWeight, fontSize, fontFamily, direction}"
+	[title]="text"
 	(click)="$btnClick.emit(id)"
 	(mouseenter)="setStyle(BUTTON)"
 	(mouseleave)="removeStyle(BUTTON)"
