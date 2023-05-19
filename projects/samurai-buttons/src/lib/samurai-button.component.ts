@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SamuraiButtonConfig } from './config.class';
-import { SamuraiButtonsCustomConfig } from './custom-config.class';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'samurai-button',
@@ -10,29 +10,30 @@ import { SamuraiButtonsCustomConfig } from './custom-config.class';
 	templateUrl: './samurai-button.component.html',
 	styleUrls: ['./samurai-button.component.scss'],
 })
-export class SamuraiButtonsComponent implements AfterViewInit {
+export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('BUTTON') button!: HTMLButtonElement;
 
 	@Input() preDefinedButton: 'PRIMARY' | 'ACCENT' | 'SUCCESS' | 'WARNING' | 'DANGER' = 'PRIMARY';
 
-	@Input() config = new SamuraiButtonConfig();
-	@Input() customConfig = new SamuraiButtonsCustomConfig();
+	@Input() config?: SamuraiButtonConfig;
+
+	@Input() btnAction = () => console.log(`Button ${this.id} clicked`);
 
 	@Input() variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED';
 	@Input() content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT';
-	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT';
+	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'NONE';
 	@Input() borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
 	@Input() state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED'; // ! not all states implemented yet
 
-	@Input({ required: true }) id: string = '1';
-	@Input({ required: true }) text: string = 'Samurai';
+	@Input() id: string = '1';
+	@Input() text: string = 'Samurai';
 	@Input() icon: string = 'favorite';
 	@Input() iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
 
 	@Input() color: string = '#000';
 	@Input() backgroundColor: string = '#fff';
+	@Input() hoverColor: string = '#00f';
 	@Input() shadowColor: string = '#fff';
-	@Input() hoverColor: string = '#00a';
 	@Input() effectSpeed: 'FAST' | 'NORMAL' | 'SLOW' = 'NORMAL'; // ! not implemented yet
 	@Input() direction: string = 'ltr';
 	@Input() width: string = 'fit-content';
@@ -49,6 +50,8 @@ export class SamuraiButtonsComponent implements AfterViewInit {
 	@Input() fontFamily: string = 'initial';
 
 	@Output() $btnClick = new EventEmitter<string>(false);
+
+	private btnClick$: Subscription = this.$btnClick.subscribe(() => this.btnAction());
 
 	private getClass(): any {
 		switch (this.hoverStyle) {
@@ -107,6 +110,68 @@ export class SamuraiButtonsComponent implements AfterViewInit {
 		}
 	}
 
+	ngOnInit(): void {
+		if (this.config)
+			for (const key in this.config)
+				switch (key) {
+					case 'id':
+						this.id = this.config[key];
+						break;
+
+					case 'text':
+						this.text = this.config[key];
+						break;
+
+					case 'variation':
+						this.variation = this.config[key];
+						break;
+
+					case 'content':
+						this.content = this.config[key];
+						break;
+
+					case 'hoverStyle':
+						this.hoverStyle = this.config[key];
+						break;
+
+					case 'borderAngle':
+						this.borderAngle = this.config[key];
+						break;
+
+					case 'state':
+						this.state = this.config[key];
+						break;
+
+					case 'icon':
+						this.icon = this.config[key];
+						break;
+
+					case 'iconStyle':
+						this.iconStyle = this.config[key];
+						break;
+
+					case 'color':
+						this.color = this.config[key];
+						break;
+
+					case 'backgroundColor':
+						this.backgroundColor = this.config[key];
+						break;
+
+					case 'hoverColor':
+						this.hoverColor = this.config[key];
+						break;
+
+					case 'fontSize':
+						this.fontSize = this.config[key];
+						break;
+
+					case 'fontFamily':
+						this.fontFamily = this.config[key];
+						break;
+				}
+	}
+
 	ngAfterViewInit(): void {
 		this.button = document.querySelector(`#button-${this.id}`) as HTMLButtonElement;
 
@@ -163,7 +228,9 @@ export class SamuraiButtonsComponent implements AfterViewInit {
 		}
 
 		this.button.classList.add(this.getClass());
+	}
 
-		// this.button.style.boxShadow = `0 4px 12px ${this.backgroundColor}`;
+	ngOnDestroy(): void {
+		this.btnClick$?.unsubscribe();
 	}
 }

@@ -8,13 +8,16 @@ export function ngAdd(): Rule {
 		const content: Buffer | null = tree.read('./src/styles.scss');
 		const content2Append = '@import "@material-design-icons/font"; \n';
 
+		let useIcon: boolean;
 		let strContent: string = '';
 
-		if (content) strContent = content.toString();
+		if (content) {
+			strContent = content.toString();
 
-		const updatedContent = content2Append + strContent;
+			const updatedContent = content2Append + strContent;
 
-		tree.overwrite('./src/styles.scss', updatedContent);
+			tree.overwrite('./src/styles.scss', updatedContent);
+		}
 
 		return tree;
 	};

@@ -1,38 +1,89 @@
 export class SamuraiButtonConfig {
-	private _state: 'ENABLED' | 'DISABLED' = 'ENABLED';
-	private _variation: 'TEXT' | 'ICON' | 'TEXT-ICON' = 'TEXT';
-	private _style: 'NORMAL' | 'ROUND' | 'SHARP' | 'NONE' = 'NORMAL';
-	private _color: string = '#fff';
-	private _backgroundColor: string = '#000';
-	private _styleClasses: string = '';
+	private _id: string = '1';
 	private _text: string = 'Samurai';
-	private _fontFamily: string = 'initial';
+	private _variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED';
+	private _content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT';
+	private _hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT';
+	private _borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
+	private _state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED';
 	private _icon: string = 'favorite';
-	private _width: string = 'fit-content';
-	private _height: string = 'fit-content';
+	private _iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
+	private _color: string = '#000';
+	private _backgroundColor: string = '#fff';
+	private _hoverColor: string = '#00f';
+	private _fontSize: string = '24px';
+	private _fontFamily: string = 'initial';
 
-	public get state(): 'ENABLED' | 'DISABLED' {
-		return this._state;
+	public get id(): string {
+		return this._id;
 	}
 
-	public set state(value: 'ENABLED' | 'DISABLED') {
-		this._state = value;
+	public set id(value: string) {
+		this._id = value;
 	}
 
-	public get variation(): 'TEXT' | 'ICON' | 'TEXT-ICON' {
+	public get text(): string {
+		return this._text;
+	}
+
+	public set text(value: string) {
+		this._text = value;
+	}
+
+	public get variation(): 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' {
 		return this._variation;
 	}
 
-	public set variation(value: 'TEXT' | 'ICON' | 'TEXT-ICON') {
+	public set variation(value: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY') {
 		this._variation = value;
 	}
 
-	public get style(): 'NORMAL' | 'ROUND' | 'SHARP' | 'NONE' {
-		return this._style;
+	public get content(): 'TEXT' | 'TEXT_ICON' | 'ICON' {
+		return this._content;
 	}
 
-	public set style(value: 'NORMAL' | 'ROUND' | 'SHARP' | 'NONE') {
-		this._style = value;
+	public set content(value: 'TEXT' | 'TEXT_ICON' | 'ICON') {
+		this._content = value;
+	}
+
+	public get hoverStyle(): 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' {
+		return this._hoverStyle;
+	}
+
+	public set hoverStyle(value: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE') {
+		this._hoverStyle = value;
+	}
+
+	public get borderAngle(): 'NORMAL' | 'ROUND' | 'SHARP' {
+		return this._borderAngle;
+	}
+
+	public set borderAngle(value: 'NORMAL' | 'ROUND' | 'SHARP') {
+		this._borderAngle = value;
+	}
+
+	public get state(): 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' {
+		return this._state;
+	}
+
+	public set state(value: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED') {
+		this._state = value;
+	}
+
+	public get icon(): string {
+		return this._icon;
+	}
+
+	public set icon(value: string) {
+		this._icon = value;
+	}
+
+	public get iconStyle(): 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' {
+		return this._iconStyle;
+	}
+
+	public set iconStyle(value: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone') {
+		this._iconStyle = value;
 	}
 
 	public get color(): string {
@@ -51,20 +102,20 @@ export class SamuraiButtonConfig {
 		this._backgroundColor = value;
 	}
 
-	public get styleClasses(): string {
-		return this._styleClasses;
+	public get hoverColor(): string {
+		return this._hoverColor;
 	}
 
-	public set styleClasses(value: string) {
-		this._styleClasses = value;
+	public set hoverColor(value: string) {
+		this._hoverColor = value;
 	}
 
-	public get text(): string {
-		return this._text;
+	public get fontSize(): string {
+		return this._fontSize;
 	}
 
-	public set text(value: string) {
-		this._text = value;
+	public set fontSize(value: string) {
+		this._fontSize = value;
 	}
 
 	public get fontFamily(): string {
@@ -75,53 +126,35 @@ export class SamuraiButtonConfig {
 		this._fontFamily = value;
 	}
 
-	public get icon(): string {
-		return this._icon;
-	}
-
-	public set icon(value: string) {
-		this._icon = value;
-	}
-
-	public get width(): string {
-		return this._width;
-	}
-
-	public set width(value: string) {
-		this._width = value;
-	}
-
-	public get height(): string {
-		return this._height;
-	}
-
-	public set height(value: string) {
-		this._height = value;
-	}
-
 	constructor(
-		state: 'ENABLED' | 'DISABLED' = 'ENABLED',
-		variation: 'TEXT' | 'ICON' | 'TEXT-ICON' = 'TEXT',
-		style: 'NORMAL' | 'ROUND' | 'SHARP' | 'NONE' = 'NORMAL',
-		color: string = '#fff',
-		backgroundColor: string = '#000',
-		styleClasses: string = '',
+		id: string = '1',
 		text: string = 'Samurai',
-		fontFamily: string = 'initial',
+		variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED',
+		content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT_ICON',
+		hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT',
+		borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL',
+		state: 'ENABLED' | 'DISABLED' = 'ENABLED',
 		icon: string = 'favorite',
-		width: string = 'fit-content',
-		height: string = 'fit-content'
+		iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'filled',
+		color: string = '#000',
+		backgroundColor: string = '#fff',
+		hoverColor: string = '#00f',
+		fontSize: string = '24px',
+		fontFamily: string = 'initial'
 	) {
-		this.state = state;
+		this.id = id;
+		this.text = text;
 		this.variation = variation;
-		this.style = style;
+		this.content = content;
+		this.hoverStyle = hoverStyle;
+		this.borderAngle = borderAngle;
+		this.state = state;
+		this.icon = icon;
+		this.iconStyle = iconStyle;
 		this.color = color;
 		this.backgroundColor = backgroundColor;
-		this.styleClasses = styleClasses;
-		this.text = text;
+		this.hoverColor = hoverColor;
+		this.fontSize = fontSize;
 		this.fontFamily = fontFamily;
-		this.icon = icon;
-		this.width = width;
-		this.height = height;
 	}
 }

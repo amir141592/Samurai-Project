@@ -54,6 +54,8 @@
 			[content]="'ICON'"
 			[hoverStyle]="'NONE'"
 		></samurai-button>
+
+		<samurai-button [config]="config" [btnAction]="btnAction"></samurai-button>
 	</div>
 
 	<div class="hover-style">
@@ -126,7 +128,14 @@
 	<div class="states">
 		<h3>State</h3>
 
-		<samurai-button [id]="'17'" [text]="'Enabled'" [backgroundColor]="'#64B5F6'" [state]="'ENABLED'" [hoverColor]="'#2196F3'"></samurai-button>
+		<samurai-button
+			[id]="'17'"
+			[text]="'Enabled'"
+			[backgroundColor]="'#64B5F6'"
+			[state]="'ENABLED'"
+			[hoverStyle]="'LEFT_TO_RIGHT'"
+			[hoverColor]="'#2196F3'"
+		></samurai-button>
 
 		<samurai-button [id]="'18'" [text]="'Disabled'" [backgroundColor]="'#9575CD'" [state]="'DISABLED'"></samurai-button>
 	</div>
