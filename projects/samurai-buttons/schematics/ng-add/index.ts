@@ -1,22 +1,21 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
 
-export function ngAdd(): Rule {
+export function ngAdd(options: any): Rule {
 	return (tree: Tree, context: SchematicContext) => {
 		context.addTask(new NodePackageInstallTask());
 
-		const content: Buffer | null = tree.read('./src/styles.scss');
-		const content2Append = '@import "@material-design-icons/font"; \n';
+		if (options.installIcon) {
+			const content: Buffer | null = tree.read('./src/styles.scss');
+			const content2Append = '@import "@material-design-icons/font";\n';
 
-		let useIcon: boolean;
-		let strContent: string = '';
+			let strContent: string = '';
 
-		if (content) {
-			strContent = content.toString();
+			if (content) {
+				strContent = content.toString();
 
-			const updatedContent = content2Append + strContent;
-
-			tree.overwrite('./src/styles.scss', updatedContent);
+				if (!strContent.includes('@import "@material-design-icons/font"')) tree.overwrite('./src/styles.scss', content2Append + strContent);
+			}
 		}
 
 		return tree;

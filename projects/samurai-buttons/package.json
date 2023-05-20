@@ -1,47 +1,47 @@
 {
-  "name": "@kuro-samurai/ngx-samurai-button",
-  "version": "1.0.8",
-  "scripts": {
-    "build": "tsc -p tsconfig.schematics.json",
-    "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/samurai-buttons/"
-  },
-  "peerDependencies": {
-    "@angular/common": "^16.0.0",
-    "@angular/core": "^16.0.0",
-    "@material-design-icons/font": "^0.14.7"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "devDependencies": {
-    "copyfiles": "file:../../node_modules/copyfiles",
-    "typescript": "file:../../node_modules/typescript"
-  },
-  "sideEffects": false,
-  "schematics": "./schematics/collection.json",
-  "ng-add": {
-    "save": "dependencies"
-  },
-  "description": "Make your app stylish with pre-styled buttons",
-  "main": "./src/public-api.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amir141592/Samurai-Project.git"
-  },
-  "keywords": [
-    "angular",
-    "button",
-    "UI/UX",
-    "ngx",
-    "UI Kit",
-    "UI",
-    "Style",
-    "Component"
-  ],
-  "author": "Amir Allahdadian",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amir141592/Samurai-Project/issues"
-  },
-  "homepage": "https://github.com/amir141592/Samurai-Project/tree/main/projects/samurai-buttons#readme"
+	"name": "@kuro-samurai/ngx-samurai-button",
+	"version": "1.0.10",
+	"scripts": {
+		"build": "tsc -p tsconfig.schematics.json",
+		"postbuild": "copyfiles schematics/schema.json schematics/*/files/** schematics/collection.json ../../dist/samurai-buttons/"
+	},
+	"peerDependencies": {
+		"@angular/common": "^16.0.0",
+		"@angular/core": "^16.0.0",
+		"@material-design-icons/font": "^0.14.7"
+	},
+	"dependencies": {
+		"tslib": "^2.3.0"
+	},
+	"devDependencies": {
+		"copyfiles": "file:../../node_modules/copyfiles",
+		"typescript": "file:../../node_modules/typescript"
+	},
+	"sideEffects": false,
+	"schematics": "./schematics/collection.json",
+	"ng-add": {
+		"save": "dependencies"
+	},
+	"description": "Make your app stylish with pre-styled buttons",
+	"main": "./src/public-api.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/amir141592/Samurai-Project.git"
+	},
+	"keywords": [
+		"angular",
+		"button",
+		"UI/UX",
+		"ngx",
+		"UI Kit",
+		"UI",
+		"Style",
+		"Component"
+	],
+	"author": "Amir Allahdadian",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/amir141592/Samurai-Project/issues"
+	},
+	"homepage": "https://github.com/amir141592/Samurai-Project/tree/main/projects/samurai-buttons#readme"
 }

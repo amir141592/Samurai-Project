@@ -45,7 +45,7 @@
 				"build": {
 					"builder": "@angular-devkit/build-angular:browser",
 					"options": {
-						"outputPath": "dist/samurai-ui",
+						"outputPath": "docs",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": ["zone.js"],
@@ -112,39 +112,36 @@
 					}
 				}
 			}
-    },
-    "samurai-buttons": {
-      "projectType": "library",
-      "root": "projects/samurai-buttons",
-      "sourceRoot": "projects/samurai-buttons/src",
-      "prefix": "samurai",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/samurai-buttons/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/samurai-buttons/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/samurai-buttons/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/samurai-buttons/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        }
-      }
-    }
+		},
+		"samurai-buttons": {
+			"projectType": "library",
+			"root": "projects/samurai-buttons",
+			"sourceRoot": "projects/samurai-buttons/src",
+			"prefix": "samurai",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "projects/samurai-buttons/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/samurai-buttons/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "projects/samurai-buttons/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"tsConfig": "projects/samurai-buttons/tsconfig.spec.json",
+						"polyfills": ["zone.js", "zone.js/testing"]
+					}
+				}
+			}
+		}
 	}
 }

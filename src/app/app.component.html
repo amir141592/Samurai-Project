@@ -1,7 +1,45 @@
-<div class="view">
-	<h1>KURO SAMURAI</h1>
+<section class="view">
+	<header>
+		<h1>SAMURAI UI</h1>
 
-	<div class="components">
-		<samurai-buttons></samurai-buttons>
-	</div>
-</div>
+		<p>version 0.1.0.beta-1</p>
+	</header>
+
+	<main>
+		<nav>
+			<menu>
+				<li routerLink="/button" routerLinkActive="active">Button</li>
+			</menu>
+		</nav>
+
+		<div class="component">
+			<router-outlet></router-outlet>
+		</div>
+	</main>
+
+	<footer>
+		<div class="link">
+			<div class="icon">
+				<img src="../assets/github-mark-white.svg" alt="Github Logo" />
+			</div>
+
+			<a href="https://github.com/amir141592/Samurai-Project" target="_blank">Github Repository</a>
+		</div>
+
+		<div class="link">
+			<div class="icon">
+				<img src="../assets/npm-logo-png-transparent.png" alt="npm package" />
+			</div>
+
+			<a href="https://www.npmjs.com/~amir141592" target="_blank">npm Package</a>
+		</div>
+
+		<div class="link">
+			<div class="icon">
+				<img src="../assets/code_white_24dp.svg" alt="code icon" />
+			</div>
+
+			<a href="https://github.com/amir141592" target="_blank">Amir Allahdadian</a>
+		</div>
+	</footer>
+</section>

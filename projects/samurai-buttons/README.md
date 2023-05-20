@@ -29,50 +29,55 @@ Run the code below in your project terminal:
 ng add @kuro-samurai/ngx-samurai-button
 ```
 
-This command will install the component and material icons font package  
-and updates your project styles.scss file and adds line  
+This command will prompt you to whether install material icon font package  
+or not. I recommend you to use icon for buttons. If you installed material icon,  
+The styles.scss file of your project will be updated with line  
 `@import "@material-design-icons/font";` at top of it.
+
+> If you didn't install material icon, just use content type of `'TEXT'`  
+> and if later on you wanted to use icons, reinstall the package.
 
 ## Basic Use
 
-If your component is standalone, import the component to your  
-@Component decorator:
+1. Import the component
 
-```typescript
-@Component({
-  ...
-  standalone: true,
-  imports: [CommonModule, SamuraiButtonsComponent],
-  ...
-})
-```
+   - If your component is standalone, import the component to your  
+     @Component decorator:
 
-Else import it to your component's module:
+     ```typescript
+     @Component({
+       //...
+       standalone: true,
+       imports: [CommonModule, SamuraiButtonsComponent],
+       //...
+     })
+     ```
 
-```typescript
-@NgModule({
-  ...
-  imports: [CommonModule, SamuraiButtonsComponent],
-  ...
-})
-```
+   - Else import it to your component's module:
 
-Then in your component use constructor of class `SamuraiButtonConfig`:
+     ```typescript
+     @NgModule({
+       //...
+       imports: [CommonModule, SamuraiButtonsComponent],
+       //...
+     })
+     ```
 
-```typescript
-public buttonConfig = new SamuraiButtonConfig()
-```
+2. Then in your component import class `SamuraiButtonConfig` and use its constructor:
 
-In the parenthesis use shortcut `ctrl + space` or `command + space` to see available values.  
-All parameters have default values so you don't need to pass all values.
+   ```typescript
+   public buttonConfig = new SamuraiButtonConfig()
+   ```
 
-Then pass the config object to component input:
+   In the parenthesis use shortcut `ctrl + space` or `command + space` to see available values.  
+   All parameters have default values so you don't need to pass all values.  
+   Refer to properties table below for values and defaults.
 
-```html
-<samurai-button [config]="buttonConfig"></samurai-button>
-```
+3. Then pass the config object to component input:
 
-Refer to properties table below for values and defaults.
+   ```html
+   <samurai-button [config]="buttonConfig"></samurai-button>
+   ```
 
 ### Button With Action
 

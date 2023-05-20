@@ -3,7 +3,8 @@
 	"schematics": {
 		"ng-add": {
 			"description": "Add samurai button to the project.",
-			"factory": "./ng-add/index.js#ngAdd"
+			"factory": "./ng-add/index.js#ngAdd",
+			"schema": "./schema.json"
 		}
 	}
 }
