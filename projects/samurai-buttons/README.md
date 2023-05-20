@@ -107,7 +107,7 @@ The $event value is button id and the type is string.
 
 ## Preview
 
-Soon i add a demo for this component.
+For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Samurai-Project/)
 
 ## Properties (Inputs)
 
@@ -210,7 +210,7 @@ This component is part of [Samurai UI](https://github.com/amir141592/Samurai-Pro
 
 The following features will be added soon:
 
-- Setting up a live demo
+- Setting up a live demo ✅
 - A few pre-defined button styles to quickly choose between them
 - Passing a single config object to button ✅
 - Passing a function to button that executes on button click ✅
