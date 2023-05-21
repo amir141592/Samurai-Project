@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('BUTTON') button!: HTMLButtonElement;
 
-	@Input() preConfigured?:
+	@Input() preStyled?:
 		| 'PRIMARY_TEXT'
 		| 'ACCENT_TEXT'
 		| 'SUCCESS_TEXT'
@@ -121,8 +121,8 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 	}
 
 	ngOnInit(): void {
-		if (this.preConfigured)
-			switch (this.preConfigured) {
+		if (this.preStyled)
+			switch (this.preStyled) {
 				case 'PRIMARY_TEXT':
 					this.backgroundColor = '#64B5F6';
 					this.hoverStyle = 'LEFT_TO_RIGHT';

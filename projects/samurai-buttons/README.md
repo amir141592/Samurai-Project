@@ -11,7 +11,7 @@ This component has:
 - 7 Hover Effects
 - 3 Border Radius Styles
 - 2 States
-- 10 Pre-configured Buttons
+- 10 Pre-styled Buttons
 - [Material Icon Font (super light weight)](https://www.npmjs.com/package/@material-design-icons/font)
 
 The style of the button is based on UI/UX guidelines. You can set  
@@ -108,15 +108,15 @@ The $event value is button id and the type is string.
 
 ### Using Pre-Configured Button
 
-Assign one of the values in properties table blow to property (input) `preConfigured`:
+Assign one of the values in properties table blow to property (input) `preStyled`:
 
 ```html
-<samurai-button id="1" text="Samurai" preConfigured="PRIMARY_TEXT"></samurai-button>
+<samurai-button id="1" text="Samurai" preStyled="PRIMARY_TEXT"></samurai-button>
 ```
 
 More pre-configured buttons will be added soon.
 
-_Note: If you pass both preConfigured and config, values in config has priority._
+_Note: If you pass both preStyled and config, values in config has priority._
 
 ## Preview
 
@@ -149,14 +149,14 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
   <tr>
 	<td>config</td>
 	<td>
-		An object of type <code>SamuraiButtonConfig</code> that has all properties in this table except preConfigured. Pass an instance of it to button to
+		An object of type <code>SamuraiButtonConfig</code> that has all properties in this table except preStyled. Pass an instance of it to button to
 		configure all button properties quickly
 	</td>
 	<td>instanceof <code>SamuraiButtonConfig</code></td>
 	<td>null</td>
 </tr>
   <tr>
-	<td>preConfigured</td>
+	<td>preStyled</td>
 	<td>Set it to any available pre styled buttons for a quick config; Still you need to pass id and text to button.</td>
 	<td>
 		<code>'PRIMARY_TEXT'</code>, <code>'ACCENT_TEXT'</code>, <code>'SUCCESS_TEXT'</code>, <code>'WARNING_TEXT'</code>, <code>'DANGER_TEXT'</code>,
