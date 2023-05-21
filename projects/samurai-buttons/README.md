@@ -106,7 +106,7 @@ bind your action to event `$btnClick` like this:
 
 The $event value is button id and the type is string.
 
-### Using Pre-Configured Button
+### Using Pre-Styled Button
 
 Assign one of the values in properties table blow to property (input) `preStyled`:
 
@@ -114,7 +114,7 @@ Assign one of the values in properties table blow to property (input) `preStyled
 <samurai-button id="1" text="Samurai" preStyled="PRIMARY_TEXT"></samurai-button>
 ```
 
-More pre-configured buttons will be added soon.
+More pre-styled buttons will be added soon.
 
 _Note: If you pass both preStyled and config, values in config has priority._
 
