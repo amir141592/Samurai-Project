@@ -78,7 +78,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 				break;
 
 			case 'NEON_BORDER':
-				button.style.filter = `drop-shadow(0 0 8px ${this.borderColor})`;
+				button.style.filter = `drop-shadow(0 0 12px ${this.borderColor})`;
 				break;
 
 			case 'FILL':
