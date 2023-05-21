@@ -11,6 +11,7 @@ This component has:
 - 7 Hover Effects
 - 3 Border Radius Styles
 - 2 States
+- 10 Pre-configured Buttons
 - [Material Icon Font (super light weight)](https://www.npmjs.com/package/@material-design-icons/font)
 
 The style of the button is based on UI/UX guidelines. You can set  
@@ -37,7 +38,7 @@ The styles.scss file of your project will be updated with line
 > If you didn't install material icon, just use content type of `'TEXT'`  
 > and if later on you wanted to use icons, reinstall the package.
 
-## Basic Use
+## Use
 
 1. Import the component
 
@@ -105,6 +106,18 @@ bind your action to event `$btnClick` like this:
 
 The $event value is button id and the type is string.
 
+### Using Pre-Configured Button
+
+Assign one of the values in properties table blow to property (input) `preConfigured`:
+
+```html
+<samurai-button id="1" text="Samurai" preConfigured="PRIMARY_TEXT"></samurai-button>
+```
+
+More pre-configured buttons will be added soon.
+
+_Note: If you pass both preConfigured and config, values in config has priority._
+
 ## Preview
 
 For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Samurai-Project/)
@@ -134,6 +147,24 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
    <td><code>'Samurai'</code></td>
   </tr>
   <tr>
+	<td>config</td>
+	<td>
+		An object of type <code>SamuraiButtonConfig</code> that has all properties in this table except preConfigured. Pass an instance of it to button to
+		configure all button properties quickly
+	</td>
+	<td>instanceof <code>SamuraiButtonConfig</code></td>
+	<td>null</td>
+</tr>
+  <tr>
+	<td>preConfigured</td>
+	<td>Set it to any available pre styled buttons for a quick config; Still you need to pass id and text to button.</td>
+	<td>
+		<code>'PRIMARY_TEXT'</code>, <code>'ACCENT_TEXT'</code>, <code>'SUCCESS_TEXT'</code>, <code>'WARNING_TEXT'</code>, <code>'DANGER_TEXT'</code>,
+		<code>'PRIMARY_ICON'</code>, <code>'ACCENT_ICON'</code>, <code>'SUCCESS_ICON'</code>, <code>'WARNING_ICON'</code>, <code>'DANGER_ICON'</code>
+	</td>
+	<td>null</td>
+</tr>
+  <tr>
    <td>variation</td>
    <td>Overall style of button based on UI/UX guidelines that controls emphesize and priority of the button</td>
    <td><code>'FILLED'</code>, <code>'OUTLINED'</code>, <code>'CONTENT_ONLY'</code></td>
@@ -152,7 +183,7 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
     <code>'LEFT_TO_RIGHT'</code>, <code>'BOTH_SIDES'</code>, <code>'SHUTTER_UP'</code>, <code>'SHUTTER_DOWN'</code>, <code>'GLOW'</code>,
     <code>'NEON_BORDER'</code>, <code>'FILL'</code>, <code>'NONE'</code>
    </td>
-   <td><code>'LEFT_TO_RIGHT'</code></td>
+   <td><code>'NONE'</code></td>
   </tr>
   <tr>
    <td>borderAngle</td>
@@ -211,7 +242,7 @@ This component is part of [Samurai UI](https://github.com/amir141592/Samurai-Pro
 The following features will be added soon:
 
 - Setting up a live demo ✅
-- A few pre-defined button styles to quickly choose between them
+- A few pre-defined button styles to quickly choose between them ✅
 - Passing a single config object to button ✅
 - Passing a function to button that executes on button click ✅
 - Automatically detecting right text color for button based on background color

@@ -13,7 +13,17 @@ import { Subscription } from 'rxjs';
 export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('BUTTON') button!: HTMLButtonElement;
 
-	@Input() preDefinedButton: 'PRIMARY' | 'ACCENT' | 'SUCCESS' | 'WARNING' | 'DANGER' = 'PRIMARY';
+	@Input() preConfigured?:
+		| 'PRIMARY_TEXT'
+		| 'ACCENT_TEXT'
+		| 'SUCCESS_TEXT'
+		| 'WARNING_TEXT'
+		| 'DANGER_TEXT'
+		| 'PRIMARY_ICON'
+		| 'ACCENT_ICON'
+		| 'SUCCESS_ICON'
+		| 'WARNING_ICON'
+		| 'DANGER_ICON';
 
 	@Input() config?: SamuraiButtonConfig;
 
@@ -73,7 +83,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 				break;
 
 			case 'GLOW':
-				button.style.boxShadow = `0 0 5px ${this.shadowColor}, 0 0 25px ${this.shadowColor}`;
+				button.style.boxShadow = `0 0 5px ${this.backgroundColor}, 0 0 25px ${this.backgroundColor}`;
 				button.style.transform = `scale(110%)`;
 				break;
 
@@ -111,6 +121,97 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 	}
 
 	ngOnInit(): void {
+		if (this.preConfigured)
+			switch (this.preConfigured) {
+				case 'PRIMARY_TEXT':
+					this.backgroundColor = '#64B5F6';
+					this.hoverStyle = 'LEFT_TO_RIGHT';
+					this.hoverColor = '#2196F3';
+					this.fontWeight = '700';
+					break;
+
+				case 'ACCENT_TEXT':
+					this.variation = 'OUTLINED';
+					this.backgroundColor = 'transparent';
+					this.color = '#F6A564';
+					this.borderColor = '#F6A564';
+					this.hoverStyle = 'FILL';
+					this.hoverColor = '#000';
+					this.fontWeight = '700';
+					break;
+
+				case 'SUCCESS_TEXT':
+					this.backgroundColor = '#81C784';
+					this.hoverStyle = 'LEFT_TO_RIGHT';
+					this.hoverColor = '#4CAF50';
+					this.fontWeight = '700';
+					break;
+
+				case 'WARNING_TEXT':
+					this.variation = 'OUTLINED';
+					this.backgroundColor = 'transparent';
+					this.color = '#FFD54F';
+					this.borderColor = '#FFD54F';
+					this.hoverStyle = 'FILL';
+					this.hoverColor = '#000';
+					this.fontWeight = '700';
+					break;
+
+				case 'DANGER_TEXT':
+					this.variation = 'OUTLINED';
+					this.backgroundColor = 'transparent';
+					this.color = '#EF5350';
+					this.borderColor = '#EF5350';
+					this.hoverStyle = 'FILL';
+					this.hoverColor = '#000';
+					this.fontWeight = '700';
+					break;
+
+				case 'PRIMARY_ICON':
+					this.content = 'ICON';
+					this.backgroundColor = '#64B5F6';
+					this.hoverColor = '#2196F3';
+					this.hoverStyle = 'GLOW';
+					break;
+
+				case 'ACCENT_ICON':
+					this.content = 'ICON';
+					this.variation = 'OUTLINED';
+					this.backgroundColor = 'transparent';
+					this.color = '#F6A564';
+					this.borderColor = '#F6A564';
+					this.hoverStyle = 'FILL';
+					this.hoverColor = '#000';
+					break;
+
+				case 'SUCCESS_ICON':
+					this.content = 'ICON';
+					this.backgroundColor = '#81C784';
+					this.hoverColor = '#4CAF50';
+					this.hoverStyle = 'GLOW';
+					break;
+
+				case 'WARNING_ICON':
+					this.content = 'ICON';
+					this.variation = 'OUTLINED';
+					this.backgroundColor = 'transparent';
+					this.color = '#FFD54F';
+					this.borderColor = '#FFD54F';
+					this.hoverStyle = 'FILL';
+					this.hoverColor = '#000';
+					break;
+
+				case 'DANGER_ICON':
+					this.content = 'ICON';
+					this.variation = 'OUTLINED';
+					this.backgroundColor = 'transparent';
+					this.color = '#EF5350';
+					this.borderColor = '#EF5350';
+					this.hoverStyle = 'FILL';
+					this.hoverColor = '#000';
+					break;
+			}
+
 		if (this.config)
 			for (const key in this.config)
 				switch (key) {
@@ -189,12 +290,14 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 					case 'CONTENT_ONLY':
 						this.button.style.border = 'none';
 						this.button.style.backgroundColor = 'transparent';
+						this.button.classList.add('text-underline');
 						break;
 				}
 				break;
 
 			case 'DISABLED':
 				this.hoverStyle = 'NONE';
+				this.button.style.cursor = 'not-allowed';
 				break;
 
 			case 'PENDING':

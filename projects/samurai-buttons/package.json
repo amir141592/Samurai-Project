@@ -1,6 +1,6 @@
 {
 	"name": "@kuro-samurai/ngx-samurai-button",
-	"version": "1.0.11",
+	"version": "1.1.0",
 	"scripts": {
 		"build": "tsc -p tsconfig.schematics.json",
 		"postbuild": "copyfiles schematics/schema.json schematics/*/files/** schematics/collection.json ../../dist/samurai-buttons/"
