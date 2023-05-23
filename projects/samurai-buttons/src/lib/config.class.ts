@@ -6,6 +6,7 @@ export class SamuraiButtonConfig {
 	private _hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT';
 	private _borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
 	private _state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED';
+	private _colorDetection: boolean = true;
 	private _width: string = 'fit-content';
 	private _height: string = 'fit-content';
 	private _icon: string = 'favorite';
@@ -70,6 +71,14 @@ export class SamuraiButtonConfig {
 
 	public set state(value: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED') {
 		this._state = value;
+	}
+
+	public get colorDetection(): boolean {
+		return this._colorDetection;
+	}
+
+	public set colorDetection(value: boolean) {
+		this._colorDetection = value;
 	}
 
 	public get width(): string {
@@ -152,6 +161,7 @@ export class SamuraiButtonConfig {
 		hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT',
 		borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL',
 		state: 'ENABLED' | 'DISABLED' = 'ENABLED',
+		colorDetection: boolean = true,
 		width: string = 'fit-content',
 		height: string = 'fit-content',
 		icon: string = 'favorite',
@@ -169,6 +179,7 @@ export class SamuraiButtonConfig {
 		this.hoverStyle = hoverStyle;
 		this.borderAngle = borderAngle;
 		this.state = state;
+		this.colorDetection = colorDetection;
 		this.width = width;
 		this.height = height;
 		this.icon = icon;

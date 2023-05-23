@@ -196,6 +196,12 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
    <td><code>'ENABLED'</code></td>
   </tr>
   <tr>
+	 <td>colorDetection</td>
+	 <td>Control auto text and icon color detection feature when variation is <code>'FILLED'</code>.</td>
+	 <td><code>true</code>, <code>false</code></td>
+	 <td><code>true</code></td>
+  </tr>
+  <tr>
 	 <td>width</td>
 	 <td>Set button width.</td>
 	 <td>any css <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width" target="_blank" rel="noopener noreferrer">width</a></td>
