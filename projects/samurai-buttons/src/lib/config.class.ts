@@ -6,6 +6,8 @@ export class SamuraiButtonConfig {
 	private _hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT';
 	private _borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
 	private _state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED';
+	private _width: string = 'fit-content';
+	private _height: string = 'fit-content';
 	private _icon: string = 'favorite';
 	private _iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
 	private _color: string = '#000';
@@ -70,6 +72,22 @@ export class SamuraiButtonConfig {
 		this._state = value;
 	}
 
+	public get width(): string {
+		return this._width;
+	}
+
+	public set width(value: string) {
+		this._width = value;
+	}
+
+	public get height(): string {
+		return this._height;
+	}
+
+	public set height(value: string) {
+		this._height = value;
+	}
+
 	public get icon(): string {
 		return this._icon;
 	}
@@ -127,13 +145,15 @@ export class SamuraiButtonConfig {
 	}
 
 	constructor(
-		id: string = '1',
-		text: string = 'Samurai',
+		id: string,
+		text: string,
 		variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED',
 		content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT_ICON',
 		hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT',
 		borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL',
 		state: 'ENABLED' | 'DISABLED' = 'ENABLED',
+		width: string = 'fit-content',
+		height: string = 'fit-content',
 		icon: string = 'favorite',
 		iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'filled',
 		color: string = '#000',
@@ -142,13 +162,15 @@ export class SamuraiButtonConfig {
 		fontSize: string = '24px',
 		fontFamily: string = 'initial'
 	) {
-		this.id = id;
-		this.text = text;
+		if (id) this.id = id;
+		if (text) this.text = text;
 		this.variation = variation;
 		this.content = content;
 		this.hoverStyle = hoverStyle;
 		this.borderAngle = borderAngle;
 		this.state = state;
+		this.width = width;
+		this.height = height;
 		this.icon = icon;
 		this.iconStyle = iconStyle;
 		this.color = color;

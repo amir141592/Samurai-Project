@@ -16,9 +16,7 @@ This component has:
 
 The style of the button is based on UI/UX guidelines. You can set  
 filled, outlined or texted variations for it or change content type  
-to text, text and icon or just icon to get the right emphesize you need.  
-Plus you have the super light weight material icons font package to make  
-buttons even more stylish!
+to text, text and icon or just icon to get the right attention and priority you need.
 
 ## Installation
 
@@ -35,8 +33,8 @@ or not. I recommend you to use icon for buttons. If you installed material icon,
 The styles.scss file of your project will be updated with line  
 `@import "@material-design-icons/font";` at top of it.
 
-> If you didn't install material icon, just use content type of `'TEXT'`  
-> and if later on you wanted to use icons, reinstall the package.
+_Note: If you didn't install material icon, just use content type of `'TEXT'`  
+and if later on you wanted to use icons, reinstall the package._
 
 ## Use
 
@@ -136,13 +134,13 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
  <tbody>
   <tr>
    <td>id</td>
-   <td>A unique id in the parent component (or all rendered components) for the button</td>
+   <td>A unique id in the parent component (or all rendered components) for the button.</td>
    <td>any string</td>
    <td><code>'1'</code></td>
   </tr>
   <tr>
    <td>text</td>
-   <td>Set button text</td>
+   <td>Set button text.</td>
    <td>any string</td>
    <td><code>'Samurai'</code></td>
   </tr>
@@ -150,7 +148,7 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
 	<td>config</td>
 	<td>
 		An object of type <code>SamuraiButtonConfig</code> that has all properties in this table except preStyled. Pass an instance of it to button to
-		configure all button properties quickly
+		configure all button properties quickly.
 	</td>
 	<td>instanceof <code>SamuraiButtonConfig</code></td>
 	<td>null</td>
@@ -166,19 +164,19 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
 </tr>
   <tr>
    <td>variation</td>
-   <td>Overall style of button based on UI/UX guidelines that controls emphesize and priority of the button</td>
+   <td>Overall style of button based on UI/UX guidelines that controls emphesize and priority of the button.</td>
    <td><code>'FILLED'</code>, <code>'OUTLINED'</code>, <code>'CONTENT_ONLY'</code></td>
    <td><code>'FILLED'</code></td>
   </tr>
   <tr>
    <td>content</td>
-   <td>Set Content type of the button to be text, text and icon or just icon</td>
+   <td>Set Content type of the button to be text, text and icon or just icon.</td>
    <td><code>'TEXT'</code>, <code>'TEXT_ICON'</code>, <code>'ICON'</code></td>
    <td><code>'TEXT'</code></td>
   </tr>
   <tr>
    <td>hoverStyle</td>
-   <td>Set button hover style. currently it has 7 different styles</td>
+   <td>Set button hover style. currently it has 7 different styles and more styles will be added.</td>
    <td>
     <code>'LEFT_TO_RIGHT'</code>, <code>'BOTH_SIDES'</code>, <code>'SHUTTER_UP'</code>, <code>'SHUTTER_DOWN'</code>, <code>'GLOW'</code>,
     <code>'NEON_BORDER'</code>, <code>'FILL'</code>, <code>'NONE'</code>
@@ -187,48 +185,72 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
   </tr>
   <tr>
    <td>borderAngle</td>
-   <td>Set button border radius based on UI/UX guidelines</td>
+   <td>Set button border radius based on UI/UX guidelines.</td>
    <td><code>'NORMAL'</code>, <code>'ROUND'</code>, <code>'SHARP'</code></td>
    <td><code>'NORMAL'</code></td>
   </tr>
   <tr>
    <td>state</td>
-   <td>Set button state to either enabled or disabled. the disabled state will have no hover effect and has a gray shade over it</td>
+   <td>Set button state to either enabled or disabled. the disabled state will have no hover effect and has a gray shade over it.</td>
    <td><code>'ENABLED'</code>, <code>'DISABLED'</code></td>
    <td><code>'ENABLED'</code></td>
+  </tr>
+  <tr>
+	 <td>width</td>
+	 <td>Set button width.</td>
+	 <td>any css <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width" target="_blank" rel="noopener noreferrer">width</a></td>
+	 <td><code>'fit-content'</code></td>
+  </tr>
+  <tr>
+	 <td>height</td>
+	 <td>Set button height.</td>
+	 <td>any css <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height" target="_blank" rel="noopener noreferrer">height</a></td>
+	 <td><code>'fit-content'</code></td>
   </tr>
   <tr>
    <td>icon</td>
    <td>
     set button icon based on material icons names. Just pass icon name to this property. Refer to
-    <a href="https://fonts.google.com/icons?icon.set=Material+Icons" target="_blank" rel="noopener noreferrer">Material Icon Repository</a>
+    <a href="https://fonts.google.com/icons?icon.set=Material+Icons" target="_blank" rel="noopener noreferrer">Material Icon Repository</a>.
    </td>
    <td>Any Material Icon</td>
    <td><code>'favorite'</code></td>
   </tr>
   <tr>
    <td>iconStyle</td>
-   <td>Set icon style based on material icon styles</td>
+   <td>Set icon style based on material icon styles.</td>
    <td><code>'filled'</code>, <code>'outlined'</code>, <code>'round'</code>, <code>'sharp'</code>, <code>'two-tone'</code></td>
    <td><code>'filled'</code></td>
   </tr>
   <tr>
    <td>color</td>
-   <td>Set text and icon color for the button</td>
+   <td>Set text and icon color for the button.</td>
    <td>any color string in format of hexadecimal, RGB and HSL</td>
-   <td><code>'#000'</code></td>
+   <td><code>'#000000'</code></td>
   </tr>
   <tr>
    <td>backgroundColor</td>
-   <td>Set background color of the button</td>
+   <td>Set background color of the button.</td>
    <td>any color string in format of hexadecimal, RGB and HSL</td>
-   <td><code>'#fff'</code></td>
+   <td><code>'#ffffff'</code></td>
   </tr>
   <tr>
    <td>hoverColor</td>
-   <td>Set button hover effect color</td>
+   <td>Set button hover effect color.</td>
    <td>any color string in format of hexadecimal, RGB and HSL</td>
-   <td><code>'#00a'</code></td>
+   <td><code>'#0000aa'</code></td>
+  </tr>
+  <tr>
+   <td>fontSize</td>
+   <td>Set button font and icon size.</td>
+   <td>any css <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size" target="_blank" rel="noopener noreferrer">font-size</a></td>
+   <td><code>'24px'</code></td>
+  </tr>
+  <tr>
+   <td>fontFamily</td>
+   <td>Set button font family.</td>
+   <td>any css <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family" target="_blank" rel="noopener noreferrer">font-family</a></td>
+   <td><code>'initial'</code></td>
   </tr>
  </tbody>
 </table>
@@ -245,9 +267,11 @@ The following features will be added soon:
 - A few pre-defined button styles to quickly choose between them ✅
 - Passing a single config object to button ✅
 - Passing a function to button that executes on button click ✅
-- Automatically detecting right text color for button based on background color
+- Automatically detecting right text color for button based on background color ✅
 - Automatically detecting right hover effect color based on  
   color and background color
+- Adding support for i18n (Internationalization)
+- Implementing ARIA support for poeple using AT
 
 ## Developer Words
 

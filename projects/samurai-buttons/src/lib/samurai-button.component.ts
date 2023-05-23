@@ -40,17 +40,17 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 	@Input() icon: string = 'favorite';
 	@Input() iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
 
-	@Input() color: string = '#000';
-	@Input() backgroundColor: string = '#fff';
-	@Input() hoverColor: string = '#00f';
-	@Input() shadowColor: string = '#fff';
+	@Input() color: string = '#000000';
+	@Input() backgroundColor: string = '#ffffff';
+	@Input() hoverColor: string = '#0000aa';
+	@Input() shadowColor: string = '#ffffff';
 	@Input() effectSpeed: 'FAST' | 'NORMAL' | 'SLOW' = 'NORMAL'; // ! not implemented yet
 	@Input() direction: string = 'ltr';
 	@Input() width: string = 'fit-content';
 	@Input() height: string = 'fit-content';
 	@Input() borderWidth: string = '2px';
 	@Input() borderStyle: 'none' | 'hidden' | 'dotted' | 'dashed' | 'solid' | 'double' | 'groove' | 'ridge' | 'inset' | 'outset' = 'solid';
-	@Input() borderColor: string = '#000';
+	@Input() borderColor: string = '#000000';
 	@Input() borderRadius: string = '8px';
 	@Input() padding: string = '8px 16px';
 	@Input() fontStyle: string = 'normal';
@@ -58,6 +58,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 	@Input() fontWeight: string = '500';
 	@Input() fontSize: string = '24px';
 	@Input() fontFamily: string = 'initial';
+	@Input() colorDetection: boolean = true;
 
 	@Output() $btnClick = new EventEmitter<string>(false);
 
@@ -271,6 +272,61 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 						this.fontFamily = this.config[key];
 						break;
 				}
+
+		if (this.colorDetection && this.backgroundColor.length == 7 && this.variation == 'FILLED') {
+			let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(this.backgroundColor);
+
+			if (result) {
+				let r = parseInt(result[1], 16) / 255;
+				let g = parseInt(result[2], 16) / 255;
+				let b = parseInt(result[3], 16) / 255;
+
+				let max = Math.max(r, g, b);
+				let min = Math.min(r, g, b);
+
+				// let h;
+				// let s;
+				let l = (max + min) / 2;
+
+				// ? if you uncommented codes in this if block, remove these four lines
+				l = l * 100;
+				l = Math.round(l);
+
+				if (l > 50) this.color = '#ffffff';
+				else if (l <= 50) this.color = '#000000';
+
+				// if (max == min) h = s = 0; // achromatic
+				// else {
+				// 	let d = max - min;
+
+				// 	s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+				// 	switch (max) {
+				// 		case r:
+				// 			h = (g - b) / d + (g < b ? 6 : 0);
+				// 			break;
+
+				// 		case g:
+				// 			h = (b - r) / d + 2;
+				// 			break;
+
+				// 		case b:
+				// 			h = (r - g) / d + 4;
+				// 			break;
+				// 	}
+
+				// 	if (h) h /= 6;
+				// }
+
+				// if (h) h = Math.round(360 * h);
+				// s = s * 100;
+				// s = Math.round(s);
+				// l = l * 100;
+				// l = Math.round(l);
+
+				// const colorInHSL = 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
+			}
+		}
 	}
 
 	ngAfterViewInit(): void {
@@ -285,6 +341,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 
 					case 'OUTLINED':
 						this.button.style.backgroundColor = 'transparent';
+						this.button.style.borderColor = this.color;
 						break;
 
 					case 'CONTENT_ONLY':
