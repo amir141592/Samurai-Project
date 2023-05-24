@@ -12,6 +12,7 @@ This component has:
 - 3 Border Radius Styles
 - 2 States
 - 10 Pre-styled Buttons
+- Support for [Angular Internationalization](https://angular.io/guide/i18n-overview)
 - [Material Icon Font (super light weight)](https://www.npmjs.com/package/@material-design-icons/font)
 
 The style of the button is based on UI/UX guidelines. You can set  
@@ -24,7 +25,7 @@ This component supports **Angular 16 and higher**
 
 Run the code below in your project terminal:
 
-```bash
+```powershell
 ng add @kuro-samurai/ngx-samurai-button
 ```
 
@@ -202,6 +203,12 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
 	 <td><code>true</code></td>
   </tr>
   <tr>
+	 <td>i18n</td>
+	 <td>Setting up button for angular i18n (Internationalization) feature. Read <a href="https://angular.io/guide/i18n-overview" target="_blank" rel="noopener noreferrer">Angular Internationalization</a></td>
+	 <td>boolean</td>
+	 <td><code>true</code></td>
+  </tr>
+  <tr>
 	 <td>width</td>
 	 <td>Set button width.</td>
 	 <td>any css <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width" target="_blank" rel="noopener noreferrer">width</a></td>
@@ -276,8 +283,8 @@ The following features will be added soon:
 - Automatically detecting right text color for button based on background color ✅
 - Automatically detecting right hover effect color based on  
   color and background color
-- Adding support for i18n (Internationalization)
-- Implementing ARIA support for poeple using AT
+- Adding support for i18n (Internationalization) ✅
+- Implementing ARIA support for people using AT
 
 ## Developer Words
 

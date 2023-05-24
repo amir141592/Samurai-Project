@@ -59,6 +59,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 	@Input() fontSize: string = '24px';
 	@Input() fontFamily: string = 'initial';
 	@Input() colorDetection: boolean = true;
+	@Input() i18n: boolean = true;
 
 	@Output() $btnClick = new EventEmitter<string>(false);
 
@@ -292,8 +293,8 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 				l = l * 100;
 				l = Math.round(l);
 
-				if (l > 50) this.color = '#ffffff';
-				else if (l <= 50) this.color = '#000000';
+				if (l > 50) this.color = '#000000';
+				else if (l <= 50) this.color = '#ffffff';
 
 				// if (max == min) h = s = 0; // achromatic
 				// else {
@@ -385,6 +386,11 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 			case 'ICON':
 				this.button.style.padding = '8px';
 				break;
+		}
+
+		if (this.i18n) {
+			this.button.setAttribute('i18n', '');
+			this.button.setAttribute('i18n-title', '');
 		}
 
 		this.button.classList.add(this.getClass());

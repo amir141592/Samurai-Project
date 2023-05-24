@@ -7,6 +7,7 @@ export class SamuraiButtonConfig {
 	private _borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
 	private _state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED';
 	private _colorDetection: boolean = true;
+	private _i18n: boolean = false;
 	private _width: string = 'fit-content';
 	private _height: string = 'fit-content';
 	private _icon: string = 'favorite';
@@ -79,6 +80,14 @@ export class SamuraiButtonConfig {
 
 	public set colorDetection(value: boolean) {
 		this._colorDetection = value;
+	}
+
+	public get i18n(): boolean {
+		return this._i18n;
+	}
+
+	public set i18n(value: boolean) {
+		this._i18n = value;
 	}
 
 	public get width(): string {
@@ -162,6 +171,7 @@ export class SamuraiButtonConfig {
 		borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL',
 		state: 'ENABLED' | 'DISABLED' = 'ENABLED',
 		colorDetection: boolean = true,
+		i18n: boolean = false,
 		width: string = 'fit-content',
 		height: string = 'fit-content',
 		icon: string = 'favorite',
@@ -180,6 +190,7 @@ export class SamuraiButtonConfig {
 		this.borderAngle = borderAngle;
 		this.state = state;
 		this.colorDetection = colorDetection;
+		this.i18n = i18n;
 		this.width = width;
 		this.height = height;
 		this.icon = icon;
