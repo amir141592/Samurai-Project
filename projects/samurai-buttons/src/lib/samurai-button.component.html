@@ -12,13 +12,13 @@
 	<span
 		*ngIf="content == 'TEXT_ICON' || content == 'ICON'"
 		class="material-icons{{ iconStyle == 'filled' ? '' : '-' + iconStyle }}"
-		style="color: inherit"
+		style="color: inherit; font-size: inherit"
 		[ngStyle]="{ paddingRight: content == 'TEXT_ICON' ? '8px' : '' }"
 	>
 		{{ icon }}
 	</span>
 
-	<p *ngIf="content == 'TEXT_ICON' || content == 'TEXT'" style="color: inherit">{{ text }}</p>
+	<p *ngIf="content == 'TEXT_ICON' || content == 'TEXT'" style="color: inherit; font-size: inherit">{{ text }}</p>
 
 	<span *ngIf="state == 'DISABLED'" class="disabled"></span>
 </button>

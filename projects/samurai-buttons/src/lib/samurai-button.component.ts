@@ -56,7 +56,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 	@Input() fontStyle: string = 'normal';
 	@Input() fontVariant: string = 'normal';
 	@Input() fontWeight: string = '500';
-	@Input() fontSize: string = '24px';
+	@Input() fontSize: string = '1.25vw';
 	@Input() fontFamily: string = 'initial';
 	@Input() colorDetection: boolean = true;
 	@Input() i18n: boolean = true;

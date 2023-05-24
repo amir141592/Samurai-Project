@@ -15,7 +15,7 @@ export class SamuraiButtonConfig {
 	private _color: string = '#000';
 	private _backgroundColor: string = '#fff';
 	private _hoverColor: string = '#00f';
-	private _fontSize: string = '24px';
+	private _fontSize: string = '1.25vw';
 	private _fontFamily: string = 'initial';
 
 	public get id(): string {
@@ -179,7 +179,7 @@ export class SamuraiButtonConfig {
 		color: string = '#000',
 		backgroundColor: string = '#fff',
 		hoverColor: string = '#00f',
-		fontSize: string = '24px',
+		fontSize: string = '1.25vw',
 		fontFamily: string = 'initial'
 	) {
 		if (id) this.id = id;
