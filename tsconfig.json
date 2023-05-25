@@ -20,7 +20,15 @@
 		"module": "ES2022",
 		"useDefineForClassFields": false,
 		"paths": {
-			"samurai-buttons": ["dist/samurai-buttons", "dist/samurai-buttons", "dist/samurai-buttons", "dist/samurai-buttons"],
+      "samurai-buttons": [
+        "dist/samurai-buttons",
+        "dist/samurai-buttons",
+        "dist/samurai-buttons",
+        "dist/samurai-buttons"
+      ],
+      "samurai-radial-menu": [
+        "dist/samurai-radial-menu"
+      ],
 			"test-lib": ["dist/test-lib"]
 		},
 		"lib": ["ES2022", "dom"]
