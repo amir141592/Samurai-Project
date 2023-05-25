@@ -12,7 +12,9 @@ This component has:
 - 3 Border Radius Styles
 - 2 States
 - 10 Pre-styled Buttons
+- Automatic text and icon and hover color detection
 - Support for [Angular Internationalization](https://angular.io/guide/i18n-overview)
+- Support for [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
 - [Material Icon Font (super light weight)](https://www.npmjs.com/package/@material-design-icons/font)
 
 The style of the button is based on UI/UX guidelines. You can set  
@@ -203,10 +205,25 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
 	 <td><code>true</code></td>
   </tr>
   <tr>
+	 <td>hoverColorDetection</td>
+	 <td>
+		Control auto hover color detection feature. The button AI 😉 will pick a darker shade of background color when hover style is
+		<code>'LEFT_TO_RIGHT'</code> | <code>'RIGHT_TO_LEFT'</code> | <code>'BOTH_SIDES'</code> | <code>'SHUTTER_UP'</code> | <code>'SHUTTER_DOWN'</code>
+	 </td>
+	 <td>boolean</td>
+	 <td><code>true</code></td>
+  </tr>
+  <tr>
 	 <td>i18n</td>
 	 <td>Setting up button for angular i18n (Internationalization) feature. Read <a href="https://angular.io/guide/i18n-overview" target="_blank" rel="noopener noreferrer">Angular Internationalization</a></td>
 	 <td>boolean</td>
 	 <td><code>true</code></td>
+  </tr>
+  <tr>
+	 <td>direction</td>
+	 <td>Set button content direction for localized button.</td>
+	 <td><code>'ltr'</code>, <code>'rtl'</code></td>
+	 <td><code>'ltr'</code></td>
   </tr>
   <tr>
 	 <td>width</td>
@@ -282,15 +299,15 @@ The following features will be added soon:
 - Passing a function to button that executes on button click ✅
 - Automatically detecting right text color for button based on background color ✅
 - Automatically detecting right hover effect color based on  
-  color and background color
+  color and background color ✅
 - Adding support for i18n (Internationalization) ✅
-- Implementing ARIA support for people using AT
+- Implementing ARIA support for people using AT ✅
 
 ## Developer Words
 
 I learned programming for free on the web. Now I want to return  
 the love to programmers community. I plan to make a free UI kit for  
-angular and this package is one of many free packages i will publish on npm.
+angular and this package is one of many free packages I will publish on npm.
 
 ## Contributors
 

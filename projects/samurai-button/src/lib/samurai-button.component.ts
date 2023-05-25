@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 	templateUrl: './samurai-button.component.html',
 	styleUrls: ['./samurai-button.component.scss'],
 })
-export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy {
+export class SamuraiButtonComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('BUTTON') button!: HTMLButtonElement;
 
 	@Input() preStyled?:
@@ -31,7 +31,8 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 
 	@Input() variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED';
 	@Input() content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT';
-	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'NONE';
+	@Input() hoverStyle: 'LEFT_TO_RIGHT' | 'RIGHT_TO_LEFT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' =
+		'NONE';
 	@Input() borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
 	@Input() state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED'; // ! not all states implemented yet
 
@@ -45,7 +46,7 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 	@Input() hoverColor: string = '#0000aa';
 	@Input() shadowColor: string = '#ffffff';
 	@Input() effectSpeed: 'FAST' | 'NORMAL' | 'SLOW' = 'NORMAL'; // ! not implemented yet
-	@Input() direction: string = 'ltr';
+	@Input() direction: 'ltr' | 'rtl' = 'ltr';
 	@Input() width: string = 'fit-content';
 	@Input() height: string = 'fit-content';
 	@Input() borderWidth: string = '2px';
@@ -59,11 +60,14 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 	@Input() fontSize: string = '1.25vw';
 	@Input() fontFamily: string = 'initial';
 	@Input() colorDetection: boolean = true;
+	@Input() hoverColorDetection: boolean = true;
 	@Input() i18n: boolean = true;
 
 	@Output() $btnClick = new EventEmitter<string>(false);
 
 	private btnClick$: Subscription = this.$btnClick.subscribe(() => this.btnAction());
+
+	private backgroundColorHSL?: { h: number; s: number; l: number };
 
 	private getClass(): any {
 		switch (this.hoverStyle) {
@@ -245,6 +249,26 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 						this.state = this.config[key];
 						break;
 
+					case 'colorDetection':
+						this.colorDetection = this.config[key];
+						break;
+
+					case 'i18n':
+						this.i18n = this.config[key];
+						break;
+
+					case 'direction':
+						this.direction = this.config[key];
+						break;
+
+					case 'width':
+						this.width = this.config[key];
+						break;
+
+					case 'height':
+						this.height = this.config[key];
+						break;
+
 					case 'icon':
 						this.icon = this.config[key];
 						break;
@@ -274,7 +298,15 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 						break;
 				}
 
-		if (this.colorDetection && this.backgroundColor.length == 7 && this.variation == 'FILLED') {
+		if (
+			this.hoverColorDetection &&
+			this.backgroundColor?.length == 7 &&
+			(this.hoverStyle == 'LEFT_TO_RIGHT' ||
+				this.hoverStyle == 'RIGHT_TO_LEFT' ||
+				this.hoverStyle == 'BOTH_SIDES' ||
+				this.hoverStyle == 'SHUTTER_DOWN' ||
+				this.hoverStyle == 'SHUTTER_UP')
+		) {
 			let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(this.backgroundColor);
 
 			if (result) {
@@ -285,47 +317,68 @@ export class SamuraiButtonsComponent implements OnInit, AfterViewInit, OnDestroy
 				let max = Math.max(r, g, b);
 				let min = Math.min(r, g, b);
 
-				// let h;
-				// let s;
+				let h!: number;
+				let s: number;
 				let l = (max + min) / 2;
 
-				// ? if you uncommented codes in this if block, remove these four lines
+				if (max == min) h = s = 0; // achromatic
+				else {
+					let d = max - min;
+
+					s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+					switch (max) {
+						case r:
+							h = (g - b) / d + (g < b ? 6 : 0);
+							break;
+
+						case g:
+							h = (b - r) / d + 2;
+							break;
+
+						case b:
+							h = (r - g) / d + 4;
+							break;
+					}
+
+					h /= 6;
+				}
+
+				h = Math.round(360 * h);
+				s = s * 100;
+				s = Math.round(s);
 				l = l * 100;
 				l = Math.round(l);
 
-				if (l > 50) this.color = '#000000';
-				else if (l <= 50) this.color = '#ffffff';
+				this.backgroundColorHSL = { h, s, l };
+				this.backgroundColor = `hsl(${h}, ${s}%, ${l}%)`;
+				this.hoverColor = `hsl(${h}, ${l - 20 >= 50 ? s : s + 9}%, ${l - 10}%)`;
+			}
+		}
 
-				// if (max == min) h = s = 0; // achromatic
-				// else {
-				// 	let d = max - min;
+		if (this.colorDetection && this.backgroundColor?.length == 7 && this.variation == 'FILLED') {
+			if (this.backgroundColorHSL) {
+				if (this.backgroundColorHSL.l > 50) this.color = '#000000';
+				else if (this.backgroundColorHSL.l <= 50) this.color = '#ffffff';
+			} else {
+				let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(this.backgroundColor);
 
-				// 	s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+				if (result) {
+					let r = parseInt(result[1], 16) / 255;
+					let g = parseInt(result[2], 16) / 255;
+					let b = parseInt(result[3], 16) / 255;
 
-				// 	switch (max) {
-				// 		case r:
-				// 			h = (g - b) / d + (g < b ? 6 : 0);
-				// 			break;
+					let max = Math.max(r, g, b);
+					let min = Math.min(r, g, b);
 
-				// 		case g:
-				// 			h = (b - r) / d + 2;
-				// 			break;
+					let l = (max + min) / 2;
 
-				// 		case b:
-				// 			h = (r - g) / d + 4;
-				// 			break;
-				// 	}
+					l = l * 100;
+					l = Math.round(l);
 
-				// 	if (h) h /= 6;
-				// }
-
-				// if (h) h = Math.round(360 * h);
-				// s = s * 100;
-				// s = Math.round(s);
-				// l = l * 100;
-				// l = Math.round(l);
-
-				// const colorInHSL = 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
+					if (l > 50) this.color = '#000000';
+					else if (l <= 50) this.color = '#ffffff';
+				}
 			}
 		}
 	}

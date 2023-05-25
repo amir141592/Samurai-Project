@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SamuraiButtonsComponent } from 'projects/samurai-buttons/src/public-api';
-import { SamuraiButtonConfig } from 'projects/samurai-buttons/src/lib/config.class';
+import { SamuraiButtonComponent } from 'projects/samurai-button/src/public-api';
+import { SamuraiButtonConfig } from 'projects/samurai-button/src/lib/config.class';
 
 @Component({
 	selector: 'samurai-buttons',
 	standalone: true,
-	imports: [CommonModule, SamuraiButtonsComponent],
+	imports: [CommonModule, SamuraiButtonComponent],
 	templateUrl: './buttons.component.html',
 	styleUrls: ['./buttons.component.scss'],
 })

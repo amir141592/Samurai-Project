@@ -7,14 +7,16 @@ export class SamuraiButtonConfig {
 	private _borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
 	private _state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED';
 	private _colorDetection: boolean = true;
+	private _hoverColorDetection: boolean = true;
 	private _i18n: boolean = false;
+	private _direction: 'ltr' | 'rtl' = 'ltr';
 	private _width: string = 'fit-content';
 	private _height: string = 'fit-content';
 	private _icon: string = 'favorite';
 	private _iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
-	private _color: string = '#000';
-	private _backgroundColor: string = '#fff';
-	private _hoverColor: string = '#00f';
+	private _color: string = '#000000';
+	private _backgroundColor: string = '#ffffff';
+	private _hoverColor: string = '#0000aa';
 	private _fontSize: string = '1.25vw';
 	private _fontFamily: string = 'initial';
 
@@ -82,12 +84,28 @@ export class SamuraiButtonConfig {
 		this._colorDetection = value;
 	}
 
+	public get hoverColorDetection(): boolean {
+		return this._hoverColorDetection;
+	}
+
+	public set hoverColorDetection(value: boolean) {
+		this._hoverColorDetection = value;
+	}
+
 	public get i18n(): boolean {
 		return this._i18n;
 	}
 
 	public set i18n(value: boolean) {
 		this._i18n = value;
+	}
+
+	public get direction(): 'ltr' | 'rtl' {
+		return this._direction;
+	}
+
+	public set direction(value: 'ltr' | 'rtl') {
+		this._direction = value;
 	}
 
 	public get width(): string {
@@ -171,14 +189,16 @@ export class SamuraiButtonConfig {
 		borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL',
 		state: 'ENABLED' | 'DISABLED' = 'ENABLED',
 		colorDetection: boolean = true,
+		hoverColorDetection: boolean = true,
 		i18n: boolean = false,
+		direction: 'ltr' | 'rtl' = 'ltr',
 		width: string = 'fit-content',
 		height: string = 'fit-content',
 		icon: string = 'favorite',
 		iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'filled',
-		color: string = '#000',
-		backgroundColor: string = '#fff',
-		hoverColor: string = '#00f',
+		color: string = '#000000',
+		backgroundColor: string = '#ffffff',
+		hoverColor: string = '#0000aa',
 		fontSize: string = '1.25vw',
 		fontFamily: string = 'initial'
 	) {
@@ -190,7 +210,9 @@ export class SamuraiButtonConfig {
 		this.borderAngle = borderAngle;
 		this.state = state;
 		this.colorDetection = colorDetection;
+		this.hoverColorDetection = hoverColorDetection;
 		this.i18n = i18n;
+		this.direction = direction;
 		this.width = width;
 		this.height = height;
 		this.icon = icon;
