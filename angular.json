@@ -113,23 +113,23 @@
 				}
 			}
 		},
-		"samurai-buttons": {
+		"samurai-button": {
 			"projectType": "library",
-			"root": "projects/samurai-buttons",
-			"sourceRoot": "projects/samurai-buttons/src",
+			"root": "projects/samurai-button",
+			"sourceRoot": "projects/samurai-button/src",
 			"prefix": "samurai",
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:ng-packagr",
 					"options": {
-						"project": "projects/samurai-buttons/ng-package.json"
+						"project": "projects/samurai-button/ng-package.json"
 					},
 					"configurations": {
 						"production": {
-							"tsConfig": "projects/samurai-buttons/tsconfig.lib.prod.json"
+							"tsConfig": "projects/samurai-button/tsconfig.lib.prod.json"
 						},
 						"development": {
-							"tsConfig": "projects/samurai-buttons/tsconfig.lib.json"
+							"tsConfig": "projects/samurai-button/tsconfig.lib.json"
 						}
 					},
 					"defaultConfiguration": "production"
@@ -137,44 +137,41 @@
 				"test": {
 					"builder": "@angular-devkit/build-angular:karma",
 					"options": {
-						"tsConfig": "projects/samurai-buttons/tsconfig.spec.json",
+						"tsConfig": "projects/samurai-button/tsconfig.spec.json",
 						"polyfills": ["zone.js", "zone.js/testing"]
 					}
 				}
 			}
-    },
-    "samurai-radial-menu": {
-      "projectType": "library",
-      "root": "projects/samurai-radial-menu",
-      "sourceRoot": "projects/samurai-radial-menu/src",
-      "prefix": "samurai",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/samurai-radial-menu/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/samurai-radial-menu/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/samurai-radial-menu/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/samurai-radial-menu/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        }
-      }
-    }
+		},
+		"samurai-radial-menu": {
+			"projectType": "library",
+			"root": "projects/samurai-radial-menu",
+			"sourceRoot": "projects/samurai-radial-menu/src",
+			"prefix": "samurai",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "projects/samurai-radial-menu/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/samurai-radial-menu/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "projects/samurai-radial-menu/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"tsConfig": "projects/samurai-radial-menu/tsconfig.spec.json",
+						"polyfills": ["zone.js", "zone.js/testing"]
+					}
+				}
+			}
+		}
 	}
 }
