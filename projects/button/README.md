@@ -121,7 +121,7 @@ _Note: If you pass both preStyled and config, values in config has priority._
 
 ## Preview
 
-For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Samurai-Project/)
+For Live demo visit [Github page for Samurai UI (Beta)](https://amir141592.github.io/Samurai-Project/)
 
 ## Properties (Inputs)
 
@@ -255,19 +255,19 @@ For Live demo visit [Github page for Samurai UI](https://amir141592.github.io/Sa
   <tr>
    <td>color</td>
    <td>Set text and icon color for the button.</td>
-   <td>any color string in format of hexadecimal, RGB and HSL</td>
+   <td>any color string in format of hexadecimal</td>
    <td><code>'#000000'</code></td>
   </tr>
   <tr>
    <td>backgroundColor</td>
    <td>Set background color of the button.</td>
-   <td>any color string in format of hexadecimal, RGB and HSL</td>
+   <td>any color string in format of hexadecimal</td>
    <td><code>'#ffffff'</code></td>
   </tr>
   <tr>
    <td>hoverColor</td>
    <td>Set button hover effect color.</td>
-   <td>any color string in format of hexadecimal, RGB and HSL</td>
+   <td>any color string in format of hexadecimal</td>
    <td><code>'#0000aa'</code></td>
   </tr>
   <tr>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SamuraiMenuItem } from './samurai-menu-item.class';
 
@@ -9,7 +9,9 @@ import { SamuraiMenuItem } from './samurai-menu-item.class';
 	templateUrl: './samurai-radial-menu.component.html',
 	styleUrls: ['./samurai-radial-menu.component.scss'],
 })
-export class SamuraiRadialMenuComponent {
+export class SamuraiRadialMenuComponent implements AfterViewInit {
+	@ViewChild('MENU') menu!: HTMLCanvasElement;
+
 	@Input() id: string = '1';
 	@Input() menuItems: SamuraiMenuItem[] = [];
 	@Input() animations: boolean = true;
@@ -19,4 +21,10 @@ export class SamuraiRadialMenuComponent {
 	@Input() hoverStyle: 'NONE' = 'NONE'; // ? more hover styles will be added in future
 	@Input() state: 'ENABLED' | 'DISABLED' = 'ENABLED';
 	@Input() badge: boolean = false;
+
+	private level: number = 1;
+
+	ngAfterViewInit(): void {
+		this.menu = document.querySelector(`#radial-menu-${this.id}`) as HTMLCanvasElement;
+	}
 }

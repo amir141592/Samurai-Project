@@ -12,7 +12,7 @@
 		"noUnusedParameters": true,
 		"noUnusedLocals": true,
 		"rootDir": "schematics",
-		"outDir": "../../dist/samurai-button/schematics",
+		"outDir": "../../dist/button/schematics",
 		"skipDefaultLibCheck": true,
 		"skipLibCheck": true,
 		"sourceMap": true,

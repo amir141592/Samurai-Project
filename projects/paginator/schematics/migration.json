@@ -1,0 +1,10 @@
+{
+	"$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+	"schematics": {
+		"migration-v2": {
+			"version": "2.0.0",
+			"description": "Updates the samurai paginator to version 2",
+			"factory": "./ng-update/index.js#ngUpdate"
+		}
+	}
+}

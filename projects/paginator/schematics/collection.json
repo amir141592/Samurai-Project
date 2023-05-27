@@ -1,0 +1,10 @@
+{
+	"$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+	"schematics": {
+		"ng-add": {
+			"description": "Add samurai paginator to the project.",
+			"factory": "./ng-add/index.js#ngAdd",
+			"schema": "./schema.json"
+		}
+	}
+}
