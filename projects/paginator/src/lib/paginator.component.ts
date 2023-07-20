@@ -2,9 +2,8 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { CommonModule } from '@angular/common';
 import { SamuraiPaginatorConfig } from './config.class';
 import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
-import { SamuraiButtonComponent } from 'projects/button/src/public-api';
 import { Subscription } from 'rxjs';
-import { SamuraiButtonConfig } from 'projects/button/src/lib/config.class';
+import { SamuraiButtonComponent, SamuraiButtonConfig } from '../../../button/src/public-api';
 
 @Component({
 	selector: 'samurai-paginator',

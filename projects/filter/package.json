@@ -1,0 +1,40 @@
+{
+	"name": "@kuro-samurai/ngx-samurai-filter",
+	"version": "1.0.1",
+	"scripts": {
+		"build": "tsc -p tsconfig.schematics.json",
+		"postbuild": "copyfiles schematics/schema.json schematics/*/files/** schematics/collection.json ../../dist/filter/"
+	},
+	"peerDependencies": {
+		"@angular/common": "^16.0.0",
+		"@angular/core": "^16.0.0"
+	},
+	"dependencies": {
+		"tslib": "^2.3.0"
+	},
+	"sideEffects": false,
+	"schematics": "./schematics/collection.json",
+	"ng-add": {
+		"save": "dependencies"
+	},
+	"description": "Filter your data with samurai filter pipe",
+	"main": "./src/public-api.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/amir141592/Samurai-Project.git"
+	},
+	"keywords": [
+		"angular",
+		"ngx",
+		"Samurai UI",
+		"pipe",
+		"typescript",
+		"filter"
+	],
+	"author": "Amir Allahdadian",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/amir141592/Samurai-Project/issues"
+	},
+	"homepage": "https://github.com/amir141592/Samurai-Project/tree/main/projects/filter#readme"
+}

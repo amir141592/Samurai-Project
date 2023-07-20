@@ -3,7 +3,7 @@
 	"version": "2.0.2",
 	"scripts": {
 		"build": "tsc -p tsconfig.schematics.json",
-		"postbuild": "copyfiles schematics/schema.json schematics/*/files/** schematics/collection.json ../../dist/samurai-buttons/"
+		"postbuild": "copyfiles schematics/schema.json schematics/*/files/** schematics/collection.json ../../dist/button/"
 	},
 	"peerDependencies": {
 		"@angular/common": "^16.0.0",
@@ -44,5 +44,5 @@
 	"bugs": {
 		"url": "https://github.com/amir141592/Samurai-Project/issues"
 	},
-	"homepage": "https://github.com/amir141592/Samurai-Project/tree/main/projects/samurai-button#readme"
+	"homepage": "https://github.com/amir141592/Samurai-Project/tree/main/projects/button#readme"
 }

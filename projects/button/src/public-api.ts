@@ -3,3 +3,4 @@
  */
 
 export * from './lib/samurai-button.component';
+export * from './lib/config.class';

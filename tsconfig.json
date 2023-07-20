@@ -20,6 +20,9 @@
 		"module": "ES2022",
 		"useDefineForClassFields": false,
     "paths": {
+      "filter": [
+        "dist/filter"
+      ],
       "paginator": [
         "dist/paginator"
       ],
