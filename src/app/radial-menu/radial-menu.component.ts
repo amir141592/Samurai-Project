@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SamuraiRadialMenuComponent } from 'projects/samurai-radial-menu/src/public-api';
+import { SamuraiRadialMenuComponent } from 'projects/radial-menu/src/public-api';
 
 @Component({
 	selector: 'samurai-radial-menus',

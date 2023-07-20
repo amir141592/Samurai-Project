@@ -1,0 +1,23 @@
+.paginator-container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.pages {
+	display: flex;
+	align-items: center;
+	border: 2px solid;
+	border-radius: 4px;
+}
+
+.page {
+	border-right: 1px solid;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:last-child {
+		border-right: none;
+	}
+}
