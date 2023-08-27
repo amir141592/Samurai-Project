@@ -4,6 +4,9 @@ MIT
 @angular/core
 MIT
 
+@angular/forms
+MIT
+
 @angular/platform-browser
 MIT
 
@@ -12,6 +15,8 @@ MIT
 
 @kuro-samurai/ngx-samurai-button
 ISC
+
+paginator
 
 rxjs
 Apache-2.0
@@ -219,6 +224,8 @@ Apache-2.0
  
 
 
+samurai-radial-menu
+
 tslib
 0BSD
 Copyright (c) Microsoft Corporation.
@@ -238,7 +245,7 @@ zone.js
 MIT
 The MIT License
 
-Copyright (c) 2010-2022 Google LLC. https://angular.io/license
+Copyright (c) 2010-2023 Google LLC. https://angular.io/license
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
