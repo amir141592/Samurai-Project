@@ -1,5 +1,5 @@
 {
-	"name": "@kuro-samurai/ngx-samurai-filter",
+	"name": "@atlas/ngx-atlas-filter",
 	"version": "1.0.1",
 	"scripts": {
 		"build": "tsc -p tsconfig.schematics.json",
@@ -17,16 +17,16 @@
 	"ng-add": {
 		"save": "dependencies"
 	},
-	"description": "Filter your data with samurai filter pipe",
+	"description": "Filter your data with atlas filter pipe",
 	"main": "./src/public-api.ts",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/amir141592/Samurai-Project.git"
+		"url": "git+https://github.com/amir141592/Atlas-Project.git"
 	},
 	"keywords": [
 		"angular",
 		"ngx",
-		"Samurai UI",
+		"Atlas UI",
 		"pipe",
 		"typescript",
 		"filter"
@@ -34,7 +34,7 @@
 	"author": "Amir Allahdadian",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/amir141592/Samurai-Project/issues"
+		"url": "https://github.com/amir141592/Atlas-Project/issues"
 	},
-	"homepage": "https://github.com/amir141592/Samurai-Project/tree/main/projects/filter#readme"
+	"homepage": "https://github.com/amir141592/Atlas-Project/tree/main/projects/filter#readme"
 }

@@ -1,14 +1,7 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema",
-	"$id": "buttonSchmatics",
-	"title": "Samurai Button Schematics",
-	"type": "object",
-	"properties": {
-		"installIcon": {
-			"type": "boolean",
-			"description": "when true, imports material icon font",
-			"default": true,
-			"x-prompt": "Do you want to import material icons?"
-		}
-	}
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "buttonSchmatics",
+  "title": "Samurai Button Schematics",
+  "type": "object",
+  "properties": {}
 }

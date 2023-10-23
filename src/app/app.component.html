@@ -1,68 +1,97 @@
 <section class="w-full h-full flex flex-col">
-	<header class="w-full h-20 flex items-end p-4 border-b-2 border-b-neutral-700">
-		<h1 class="mr-2 text-4xl font-bold">SAMURAI UI</h1>
+  <header
+    class="w-full h-20 flex items-end p-4 border-b-2 border-b-neutral-700"
+  >
+    <h1 class="mr-2 text-4xl font-bold">SAMURAI UI</h1>
 
-		<p class="text-base">version 0.2.1.beta-1</p>
-	</header>
+    <p class="text-base">version 0.2.1.beta-1</p>
+  </header>
 
-	<main class="hidden w-full grow overflow-hidden xl:flex">
-		<nav class="w-1/6 h-full border-r border-r-neutral-700">
-			<menu class="h-full flex flex-col">
-				<li
-					class="w-full px-4 py-2 text-2xl border-b border-b-neutral-800 cursor-pointer hover:bg-neutral-700"
-					routerLink="/button"
-					routerLinkActive="bg-neutral-800"
-				>
-					Button
-				</li>
+  <main class="hidden w-full grow overflow-hidden xl:flex">
+    <nav class="w-1/6 h-full border-r border-r-neutral-700">
+      <menu class="h-full flex flex-col">
+        <li
+          class="w-full px-4 py-2 text-2xl border-b border-b-neutral-800 cursor-pointer hover:bg-neutral-700"
+          routerLink="/button"
+          routerLinkActive="bg-neutral-800"
+        >
+          Button
+        </li>
 
-				<!-- <li routerLink="/radial-menu" routerLinkActive="active">Radial Menu</li> -->
+        <!-- <li routerLink="/radial-menu" routerLinkActive="active">Radial Menu</li> -->
 
-				<!-- <li routerLink="/paginator" routerLinkActive="active">Paginator</li> -->
-			</menu>
-		</nav>
+        <!-- <li routerLink="/paginator" routerLinkActive="active">Paginator</li> -->
+      </menu>
+    </nav>
 
-		<div class="w-5/6 h-full overflow-x-hidden overflow-y-auto">
-			<div class="component">
-				<router-outlet></router-outlet>
-			</div>
-		</div>
-	</main>
+    <div class="w-5/6 h-full overflow-x-hidden overflow-y-auto">
+      <div class="component">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
 
-	<main class="flex justify-center items-center flex-col grow p-4 xl:hidden">
-		<span class="material-icons-round text-5xl mb-4"> announcement </span>
+  <main class="flex justify-center items-center flex-col grow p-4 xl:hidden">
+    <span class="material-icons-round text-5xl mb-4"> announcement </span>
 
-		<h2 class="text-xl text-center mb-2">This page is not designed for screens other than large screens</h2>
+    <h2 class="text-xl text-center mb-2">
+      This page is not designed for screens other than large screens
+    </h2>
 
-		<p class="text-base text-center text-gray-400 flex items-center">
-			<span class="material-icons-round mr-2 text-lg text-gray-400"> info </span>
-			Support for all screens will be added soon
-		</p>
-	</main>
+    <p class="text-base text-center text-gray-400 flex items-center">
+      <span class="material-icons-round mr-2 text-lg text-gray-400">
+        info
+      </span>
+      Support for all screens will be added soon
+    </p>
+  </main>
 
-	<footer class="h-20 flex justify-evenly items-center border-t-2 border-t-neutral-700">
-		<div class="flex items-center">
-			<div class="w-12 h-12 mr-2 rounded-full overflow-hidden hidden md:w-16 md:h-16 md:flex md:justify-center md:items-center">
-				<img src="assets/github-mark-white.svg" alt="Github Logo" />
-			</div>
+  <footer
+    class="h-20 flex justify-evenly items-center border-t-2 border-t-neutral-700"
+  >
+    <div class="flex items-center">
+      <div
+        class="w-12 h-12 mr-2 rounded-full overflow-hidden hidden md:w-16 md:h-16 md:flex md:justify-center md:items-center"
+      >
+        <img src="assets/github-mark-white.svg" alt="Github Logo" />
+      </div>
 
-			<a class="2xl:text-xl hover:underline" href="https://github.com/amir141592/Samurai-Project" target="_blank">Github Repository</a>
-		</div>
+      <a
+        class="2xl:text-xl hover:underline"
+        href="https://github.com/amir141592/Samurai-Project"
+        target="_blank"
+        >Github Repository</a
+      >
+    </div>
 
-		<div class="flex items-center">
-			<div class="w-12 h-12 mr-2 rounded-full overflow-hidden hidden md:w-16 md:h-16 md:flex md:justify-center md:items-center">
-				<img src="assets/npm-logo-png-transparent.png" alt="npm package" />
-			</div>
+    <div class="flex items-center">
+      <div
+        class="w-12 h-12 mr-2 rounded-full overflow-hidden hidden md:w-16 md:h-16 md:flex md:justify-center md:items-center"
+      >
+        <img src="assets/npm-logo-png-transparent.png" alt="npm package" />
+      </div>
 
-			<a class="2xl:text-xl hover:underline" href="https://www.npmjs.com/~amir141592" target="_blank">npm Package</a>
-		</div>
+      <a
+        class="2xl:text-xl hover:underline"
+        href="https://www.npmjs.com/~amir141592"
+        target="_blank"
+        >npm Package</a
+      >
+    </div>
 
-		<div class="flex items-center">
-			<div class="w-12 h-12 mr-2 rounded-full overflow-hidden hidden md:w-16 md:h-16 md:flex md:justify-center md:items-center">
-				<img src="assets/amir-allahdadian.jpg" alt="code icon" />
-			</div>
+    <div class="flex items-center">
+      <div
+        class="w-12 h-12 mr-2 rounded-full overflow-hidden hidden md:w-16 md:h-16 md:flex md:justify-center md:items-center"
+      >
+        <img src="assets/amir-allahdadian.jpg" alt="code icon" />
+      </div>
 
-			<a class="2xl:text-xl hover:underline" href="https://github.com/amir141592" target="_blank">Amir Allahdadian</a>
-		</div>
-	</footer>
+      <a
+        class="2xl:text-xl hover:underline"
+        href="https://github.com/amir141592"
+        target="_blank"
+        >Amir Allahdadian</a
+      >
+    </div>
+  </footer>
 </section>

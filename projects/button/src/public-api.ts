@@ -2,5 +2,5 @@
  * Public API Surface of samurai-button
  */
 
-export * from './lib/samurai-button.component';
+export * from './lib/button.directive';
 export * from './lib/config.class';

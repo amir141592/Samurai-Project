@@ -1,6 +1,6 @@
-# Samurai Filter
+# Atlas Filter
 
-Filter your data with Samurai Filter Pipe
+Filter your data with Atlas Filter Pipe
 
 ## Features Overview
 
@@ -20,13 +20,13 @@ This pipe supports **Angular 16 and higher**
 Run the code below in your project terminal:
 
 ```powershell
-ng add @kuro-samurai/ngx-samurai-filter
+ng add @atlas/ngx-atlas-filter
 ```
 
 ## Use
 
 Type: `standalone`  
-Name: `SamuraiFilter`  
+Name: `AtlasFilter`  
 Return Type: `any[]`
 
 ### Importing The Pipe
@@ -76,10 +76,10 @@ Return Type: `any[]`
 #### Filter Value Boolean
 
 ```html
-<div *ngFor="let user of users | SamuraiFilter : 'verified' : true : 'equal'">
- <p>{{ user.name }}</p>
+<div *ngFor="let user of users | AtlasFilter : 'verified' : true : 'equal'">
+  <p>{{ user.name }}</p>
 
- <p>{{ user.age }}</p>
+  <p>{{ user.age }}</p>
 </div>
 ```
 
@@ -90,10 +90,10 @@ In the exmaple above, users that are verified **true** will pass the filter.
 #### Filter Value Number
 
 ```html
-<div *ngFor="let user of users | SamuraiFilter : 'age' : 13 : 'equal/greater'">
- <p>{{ user.name }}</p>
+<div *ngFor="let user of users | AtlasFilter : 'age' : 13 : 'equal/greater'">
+  <p>{{ user.name }}</p>
 
- <p>{{ user.age }}</p>
+  <p>{{ user.age }}</p>
 </div>
 ```
 
@@ -104,10 +104,10 @@ In the exmaple above, users that are **13 years old or older** will pass the fil
 #### Filter Value String
 
 ```html
-<div *ngFor="let user of users | SamuraiFilter : 'name' : 'David' : 'include'">
- <p>{{ user.name }}</p>
+<div *ngFor="let user of users | AtlasFilter : 'name' : 'David' : 'include'">
+  <p>{{ user.name }}</p>
 
- <p>{{ user.age }}</p>
+  <p>{{ user.age }}</p>
 </div>
 ```
 
@@ -117,11 +117,11 @@ In the exmaple above, users that **their name include David** will pass the filt
 
 ```html
 <ng-container *ngIf="data | async as users">
- <div *ngFor="let user of users | SamuraiFilter : 'age' : 13 : 'equal/greater'">
-  <p>{{ user.name }}</p>
+  <div *ngFor="let user of users | AtlasFilter : 'age' : 13 : 'equal/greater'">
+    <p>{{ user.name }}</p>
 
-  <p>{{ user.age }}</p>
- </div>
+    <p>{{ user.age }}</p>
+  </div>
 </ng-container>
 ```
 
@@ -174,7 +174,7 @@ _For more info about async pipe go to [Async Pipe Documentation](https://angular
 
 To see my other packages visit [my npm page](https://www.npmjs.com/~amir141592)
 
-I have a UI kit which you can see the demo [here](https://amir141592.github.io/Samurai-Project/)
+I have a UI kit. [See the demo](https://amir141592.github.io/Atlas-Project/)
 
 ## Future Plans
 
@@ -184,8 +184,8 @@ The following features will be added soon:
 
 ## Developer Words
 
-I learned programming for free on the web. Now I want to return  
-the love to programmers community. I plan to make a free UI kit for  
+I learned programming from other developers on the web. Now I want to return  
+the love to software developers community. I plan to make a free UI kit for  
 angular and this package is one of many free packages I will publish on npm.
 
 ## Contributors

@@ -1,197 +1,270 @@
 <div class="container">
-	<div class="variation">
-		<h2>Variation</h2>
+  <div class="variation">
+    <h2 class="2xl:text-2xl xl:text-xl lg:text-lg font-medium">Variation</h2>
 
-		<samurai-button
-			[id]="'1'"
-			[text]="'Filled'"
-			[backgroundColor]="'#64B5F6'"
-			[variation]="'FILLED'"
-			[hoverStyle]="'NONE'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [btnAction]="btnAction"
+      [backgroundColor]="'#64B5F6'"
+      [variation]="'FILLED'"
+      [hoverStyle]="'NONE'"
+    >
+      Filled
+    </button>
 
-		<samurai-button
-			[id]="'2'"
-			[text]="'Outlined'"
-			[color]="'#9575CD'"
-			[borderColor]="'#9575CD'"
-			[variation]="'OUTLINED'"
-			[hoverStyle]="'NONE'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [color]="'#9575CD'"
+      [borderColor]="'#9575CD'"
+      [variation]="'OUTLINED'"
+      [hoverStyle]="'NONE'"
+    >
+      Outlined
+    </button>
 
-		<samurai-button
-			[id]="'3'"
-			[text]="'Content Only'"
-			[color]="'#F06292'"
-			[variation]="'CONTENT_ONLY'"
-			[hoverStyle]="'NONE'"
-			[padding]="'0'"
-			[fontWeight]="'700'"
-		></samurai-button>
-	</div>
+    <button
+      samuraiButton
+      class="font-medium"
+      [color]="'#F06292'"
+      [variation]="'CONTENT_ONLY'"
+      [hoverStyle]="'NONE'"
+    >
+      Content Only
+    </button>
+  </div>
 
-	<div class="content">
-		<h2>Content</h2>
+  <div class="content">
+    <h2 class="2xl:text-2xl xl:text-xl lg:text-lg font-medium">Content</h2>
 
-		<samurai-button
-			[id]="'4'"
-			[text]="'Text'"
-			[backgroundColor]="'#64B5F6'"
-			[variation]="'FILLED'"
-			[content]="'TEXT'"
-			[hoverStyle]="'NONE'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#64B5F6'"
+      [variation]="'FILLED'"
+      [content]="'TEXT'"
+      [hoverStyle]="'NONE'"
+    >
+      Text
+    </button>
 
-		<samurai-button
-			[id]="'5'"
-			[text]="'Text-Icon'"
-			[backgroundColor]="'#9575CD'"
-			[variation]="'FILLED'"
-			[content]="'TEXT_ICON'"
-			[hoverStyle]="'NONE'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#9575CD'"
+      [variation]="'FILLED'"
+      [content]="'TEXT_ICON'"
+      [hoverStyle]="'NONE'"
+    >
+      Text-Icon
+    </button>
 
-		<samurai-button
-			[id]="'6'"
-			[text]="'Icon'"
-			[backgroundColor]="'#F06292'"
-			[variation]="'FILLED'"
-			[content]="'ICON'"
-			[hoverStyle]="'NONE'"
-			[fontWeight]="'700'"
-		></samurai-button>
-	</div>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#F06292'"
+      [variation]="'FILLED'"
+      [content]="'ICON'"
+      [hoverStyle]="'NONE'"
+    >
+      Icon
+    </button>
+  </div>
 
-	<div class="hover-style">
-		<h2>Hover Style</h2>
+  <div class="hover-style">
+    <h2 class="2xl:text-2xl xl:text-xl lg:text-lg font-medium">Hover Style</h2>
 
-		<samurai-button
-			[id]="'7'"
-			[text]="'Left To Right'"
-			[backgroundColor]="'#64B5F6'"
-			[hoverStyle]="'LEFT_TO_RIGHT'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#64B5F6'"
+      [hoverStyle]="'LEFT_TO_RIGHT'"
+    >
+      Left To Right
+    </button>
 
-		<samurai-button [id]="'8'" [text]="'Both Sides'" [backgroundColor]="'#9575CD'" [hoverStyle]="'BOTH_SIDES'" [fontWeight]="'700'"></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#9575CD'"
+      [hoverStyle]="'BOTH_SIDES'"
+    >
+      Both Sides
+    </button>
 
-		<samurai-button [id]="'9'" [text]="'Shutter Up'" [backgroundColor]="'#F06292'" [hoverStyle]="'SHUTTER_UP'" [fontWeight]="'700'"></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#F06292'"
+      [hoverStyle]="'SHUTTER_UP'"
+    >
+      Shutter Up
+    </button>
 
-		<samurai-button
-			[id]="'10'"
-			[text]="'Shutter Down'"
-			[backgroundColor]="'#E57373'"
-			[hoverStyle]="'SHUTTER_DOWN'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#E57373'"
+      [hoverStyle]="'SHUTTER_DOWN'"
+    >
+      Shutter Down
+    </button>
 
-		<samurai-button
-			[id]="'11'"
-			[text]="'Glow'"
-			[backgroundColor]="'#4DD0E1'"
-			[shadowColor]="'#4DD0E1'"
-			[hoverStyle]="'GLOW'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#4DD0E1'"
+      [hoverStyle]="'GLOW'"
+    >
+      Glow
+    </button>
 
-		<samurai-button
-			[id]="'12'"
-			[text]="'Neon'"
-			[color]="'#FF8A65'"
-			[borderColor]="'#FF8A65'"
-			[variation]="'OUTLINED'"
-			[hoverStyle]="'NEON_BORDER'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [color]="'#FF8A65'"
+      [borderColor]="'#FF8A65'"
+      [variation]="'OUTLINED'"
+      [hoverStyle]="'NEON_BORDER'"
+    >
+      Neon
+    </button>
 
-		<samurai-button
-			[id]="'13'"
-			[text]="'Fill'"
-			[color]="'#DCE775'"
-			[hoverColor]="'#000'"
-			[borderColor]="'#DCE775'"
-			[variation]="'OUTLINED'"
-			[hoverStyle]="'FILL'"
-			[fontWeight]="'700'"
-		></samurai-button>
-	</div>
+    <button
+      samuraiButton
+      class="font-medium"
+      [color]="'#DCE775'"
+      [hoverColor]="'#000'"
+      [borderColor]="'#DCE775'"
+      [variation]="'OUTLINED'"
+      [hoverStyle]="'FILL'"
+    >
+      Fill
+    </button>
+  </div>
 
-	<div class="border-angle">
-		<h2>Border Radius</h2>
+  <div class="border-angle">
+    <h2 class="2xl:text-2xl xl:text-xl lg:text-lg font-medium">
+      Border Radius
+    </h2>
 
-		<samurai-button
-			[id]="'14'"
-			[text]="'Normal'"
-			[backgroundColor]="'#64B5F6'"
-			[borderAngle]="'NORMAL'"
-			[hoverStyle]="'NONE'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#64B5F6'"
+      [borderRadius]="'NORMAL'"
+      [hoverStyle]="'NONE'"
+    >
+      Normal
+    </button>
 
-		<samurai-button
-			[id]="'15'"
-			[text]="'Round'"
-			[backgroundColor]="'#9575CD'"
-			[borderAngle]="'ROUND'"
-			[hoverStyle]="'NONE'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#9575CD'"
+      [borderRadius]="'ROUND'"
+      [hoverStyle]="'NONE'"
+    >
+      Round
+    </button>
 
-		<samurai-button
-			[id]="'16'"
-			[text]="'Almost Sharp'"
-			[backgroundColor]="'#F06292'"
-			[borderAngle]="'SHARP'"
-			[hoverStyle]="'NONE'"
-			[fontWeight]="'700'"
-		></samurai-button>
-	</div>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#F06292'"
+      [borderRadius]="'SHARP'"
+      [hoverStyle]="'NONE'"
+    >
+      Sharp
+    </button>
+  </div>
 
-	<div class="states">
-		<h2>State</h2>
+  <div class="states">
+    <h2 class="2xl:text-2xl xl:text-xl lg:text-lg font-medium">State</h2>
 
-		<samurai-button
-			[id]="'17'"
-			[text]="'Enabled'"
-			[backgroundColor]="'#64B5F6'"
-			[state]="'ENABLED'"
-			[hoverStyle]="'LEFT_TO_RIGHT'"
-			[hoverColor]="'#2196F3'"
-			[fontWeight]="'700'"
-		></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#64B5F6'"
+      [state]="'ENABLED'"
+      [hoverStyle]="'LEFT_TO_RIGHT'"
+      [hoverColor]="'#2196F3'"
+    >
+      Enabled
+    </button>
 
-		<samurai-button [id]="'18'" [text]="'Disabled'" [backgroundColor]="'#9575CD'" [state]="'DISABLED'" [fontWeight]="'700'"></samurai-button>
-	</div>
+    <button
+      samuraiButton
+      class="font-medium"
+      [backgroundColor]="'#9575CD'"
+      [state]="'DISABLED'"
+    >
+      Disabled
+    </button>
+  </div>
 
-	<div class="pre-configured">
-		<h2>Pre-Styled Text</h2>
+  <div class="pre-configured">
+    <h2 class="2xl:text-2xl xl:text-xl lg:text-lg font-medium">
+      Pre-Styled Text
+    </h2>
 
-		<samurai-button [id]="'19'" [text]="'Primary'" preStyled="PRIMARY_TEXT"></samurai-button>
+    <button samuraiButton class="font-medium" preStyled="PRIMARY_TEXT">
+      Primary
+    </button>
 
-		<samurai-button [id]="'20'" [text]="'Accent'" preStyled="ACCENT_TEXT"></samurai-button>
+    <button samuraiButton class="font-medium" preStyled="ACCENT_TEXT">
+      Accent
+    </button>
 
-		<samurai-button [id]="'21'" [text]="'Success'" preStyled="SUCCESS_TEXT"></samurai-button>
+    <button samuraiButton class="font-medium" preStyled="SUCCESS_TEXT">
+      Success
+    </button>
 
-		<samurai-button [id]="'22'" [text]="'Warning'" preStyled="WARNING_TEXT"></samurai-button>
+    <button samuraiButton class="font-medium" preStyled="WARNING_TEXT">
+      Warning
+    </button>
 
-		<samurai-button [id]="'23'" [text]="'Danger'" preStyled="DANGER_TEXT"></samurai-button>
-	</div>
+    <button samuraiButton class="font-medium" preStyled="DANGER_TEXT">
+      Danger
+    </button>
+  </div>
 
-	<div class="pre-configured">
-		<h2>Pre-Styled Icon</h2>
+  <div class="pre-configured">
+    <h2 class="2xl:text-2xl xl:text-xl lg:text-lg font-medium">
+      Pre-Styled Icon
+    </h2>
 
-		<samurai-button [id]="'24'" [text]="'Primary'" preStyled="PRIMARY_ICON"></samurai-button>
+    <button samuraiButton class="font-medium" preStyled="PRIMARY_ICON">
+      test
+    </button>
 
-		<samurai-button [id]="'25'" [text]="'Accent'" icon="bookmark_add" preStyled="ACCENT_ICON"></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      icon="bookmark_add"
+      preStyled="ACCENT_ICON"
+    ></button>
 
-		<samurai-button [id]="'26'" [text]="'Success'" icon="done" preStyled="SUCCESS_ICON"></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      icon="done"
+      preStyled="SUCCESS_ICON"
+    ></button>
 
-		<samurai-button [id]="'27'" [text]="'Warning'" icon="edit" preStyled="WARNING_ICON"></samurai-button>
+    <button
+      samuraiButton
+      class="font-medium"
+      icon="edit"
+      preStyled="WARNING_ICON"
+    ></button>
 
-		<samurai-button [id]="'28'" [text]="'Danger'" icon="delete" preStyled="DANGER_ICON"></samurai-button>
-	</div>
+    <button
+      samuraiButton
+      class="font-medium"
+      icon="delete"
+      preStyled="DANGER_ICON"
+    ></button>
+  </div>
 </div>

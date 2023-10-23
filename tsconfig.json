@@ -26,14 +26,11 @@
       "paginator": [
         "dist/paginator"
       ],
-      "samurai-buttons": [
-        "dist/samurai-buttons",
-        "dist/samurai-buttons",
-        "dist/samurai-buttons",
-        "dist/samurai-buttons"
+      "buttons": [
+        "dist/buttons"
       ],
-      "samurai-radial-menu": [
-        "dist/samurai-radial-menu"
+      "radial-menu": [
+        "dist/radial-menu"
       ],
 			"test-lib": ["dist/test-lib"]
 		},

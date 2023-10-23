@@ -1,226 +1,210 @@
 export class SamuraiButtonConfig {
-	private _id: string = '1';
-	private _text: string = 'Samurai';
-	private _variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED';
-	private _content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT';
-	private _hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT';
-	private _borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
-	private _state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' = 'ENABLED';
-	private _colorDetection: boolean = true;
-	private _hoverColorDetection: boolean = true;
-	private _i18n: boolean = false;
-	private _direction: 'ltr' | 'rtl' = 'ltr';
-	private _width: string = 'fit-content';
-	private _height: string = 'fit-content';
-	private _icon: string = 'favorite';
-	private _iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'round';
-	private _color: string = '#000000';
-	private _backgroundColor: string = '#ffffff';
-	private _hoverColor: string = '#0000aa';
-	private _fontSize: string = '1.25vw';
-	private _fontFamily: string = 'initial';
+  private _variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED';
+  private _content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT';
+  private _hoverStyle:
+    | 'LEFT_TO_RIGHT'
+    | 'BOTH_SIDES'
+    | 'SHUTTER_UP'
+    | 'SHUTTER_DOWN'
+    | 'GLOW'
+    | 'NEON_BORDER'
+    | 'FILL'
+    | 'NONE' = 'LEFT_TO_RIGHT';
+  private _borderRadius: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL';
+  private _state: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' =
+    'ENABLED';
+  private _colorDetection: boolean = true;
+  private _hoverColorDetection: boolean = true;
+  private _i18n: boolean = false;
+  private _icon: string = 'favorite';
+  private _iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' =
+    'round';
+  private _color: string = '#000000';
+  private _backgroundColor: string = '#ffffff';
+  private _hoverColor: string = '#0000aa';
+  private _borderColor: string = '#000000';
 
-	public get id(): string {
-		return this._id;
-	}
+  public get variation(): 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' {
+    return this._variation;
+  }
 
-	public set id(value: string) {
-		this._id = value;
-	}
+  public set variation(value: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY') {
+    this._variation = value;
+  }
 
-	public get text(): string {
-		return this._text;
-	}
+  public get content(): 'TEXT' | 'TEXT_ICON' | 'ICON' {
+    return this._content;
+  }
 
-	public set text(value: string) {
-		this._text = value;
-	}
+  public set content(value: 'TEXT' | 'TEXT_ICON' | 'ICON') {
+    this._content = value;
+  }
 
-	public get variation(): 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' {
-		return this._variation;
-	}
+  public get hoverStyle():
+    | 'LEFT_TO_RIGHT'
+    | 'BOTH_SIDES'
+    | 'SHUTTER_UP'
+    | 'SHUTTER_DOWN'
+    | 'GLOW'
+    | 'NEON_BORDER'
+    | 'FILL'
+    | 'NONE' {
+    return this._hoverStyle;
+  }
 
-	public set variation(value: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY') {
-		this._variation = value;
-	}
+  public set hoverStyle(
+    value:
+      | 'LEFT_TO_RIGHT'
+      | 'BOTH_SIDES'
+      | 'SHUTTER_UP'
+      | 'SHUTTER_DOWN'
+      | 'GLOW'
+      | 'NEON_BORDER'
+      | 'FILL'
+      | 'NONE'
+  ) {
+    this._hoverStyle = value;
+  }
 
-	public get content(): 'TEXT' | 'TEXT_ICON' | 'ICON' {
-		return this._content;
-	}
+  public get borderRadius(): 'NORMAL' | 'ROUND' | 'SHARP' {
+    return this._borderRadius;
+  }
 
-	public set content(value: 'TEXT' | 'TEXT_ICON' | 'ICON') {
-		this._content = value;
-	}
+  public set borderRadius(value: 'NORMAL' | 'ROUND' | 'SHARP') {
+    this._borderRadius = value;
+  }
 
-	public get hoverStyle(): 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' {
-		return this._hoverStyle;
-	}
+  public get state(): 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' {
+    return this._state;
+  }
 
-	public set hoverStyle(value: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE') {
-		this._hoverStyle = value;
-	}
+  public set state(
+    value: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED'
+  ) {
+    this._state = value;
+  }
 
-	public get borderAngle(): 'NORMAL' | 'ROUND' | 'SHARP' {
-		return this._borderAngle;
-	}
+  public get colorDetection(): boolean {
+    return this._colorDetection;
+  }
 
-	public set borderAngle(value: 'NORMAL' | 'ROUND' | 'SHARP') {
-		this._borderAngle = value;
-	}
+  public set colorDetection(value: boolean) {
+    this._colorDetection = value;
+  }
 
-	public get state(): 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED' {
-		return this._state;
-	}
+  public get hoverColorDetection(): boolean {
+    return this._hoverColorDetection;
+  }
 
-	public set state(value: 'ENABLED' | 'PENDING' | 'DONE' | 'FAILED' | 'DISABLED') {
-		this._state = value;
-	}
+  public set hoverColorDetection(value: boolean) {
+    this._hoverColorDetection = value;
+  }
 
-	public get colorDetection(): boolean {
-		return this._colorDetection;
-	}
+  public get i18n(): boolean {
+    return this._i18n;
+  }
 
-	public set colorDetection(value: boolean) {
-		this._colorDetection = value;
-	}
+  public set i18n(value: boolean) {
+    this._i18n = value;
+  }
 
-	public get hoverColorDetection(): boolean {
-		return this._hoverColorDetection;
-	}
+  public get icon(): string {
+    return this._icon;
+  }
 
-	public set hoverColorDetection(value: boolean) {
-		this._hoverColorDetection = value;
-	}
+  public set icon(value: string) {
+    this._icon = value;
+  }
 
-	public get i18n(): boolean {
-		return this._i18n;
-	}
+  public get iconStyle():
+    | 'filled'
+    | 'outlined'
+    | 'round'
+    | 'sharp'
+    | 'two-tone' {
+    return this._iconStyle;
+  }
 
-	public set i18n(value: boolean) {
-		this._i18n = value;
-	}
+  public set iconStyle(
+    value: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone'
+  ) {
+    this._iconStyle = value;
+  }
 
-	public get direction(): 'ltr' | 'rtl' {
-		return this._direction;
-	}
+  public get color(): string {
+    return this._color;
+  }
 
-	public set direction(value: 'ltr' | 'rtl') {
-		this._direction = value;
-	}
+  public set color(value: string) {
+    this._color = value;
+  }
 
-	public get width(): string {
-		return this._width;
-	}
+  public get backgroundColor(): string {
+    return this._backgroundColor;
+  }
 
-	public set width(value: string) {
-		this._width = value;
-	}
+  public set backgroundColor(value: string) {
+    this._backgroundColor = value;
+  }
 
-	public get height(): string {
-		return this._height;
-	}
+  public get hoverColor(): string {
+    return this._hoverColor;
+  }
 
-	public set height(value: string) {
-		this._height = value;
-	}
+  public set hoverColor(value: string) {
+    this._hoverColor = value;
+  }
 
-	public get icon(): string {
-		return this._icon;
-	}
+  public get borderColor(): string {
+    return this._borderColor;
+  }
 
-	public set icon(value: string) {
-		this._icon = value;
-	}
+  public set borderColor(value: string) {
+    this._borderColor = value;
+  }
 
-	public get iconStyle(): 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' {
-		return this._iconStyle;
-	}
-
-	public set iconStyle(value: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone') {
-		this._iconStyle = value;
-	}
-
-	public get color(): string {
-		return this._color;
-	}
-
-	public set color(value: string) {
-		this._color = value;
-	}
-
-	public get backgroundColor(): string {
-		return this._backgroundColor;
-	}
-
-	public set backgroundColor(value: string) {
-		this._backgroundColor = value;
-	}
-
-	public get hoverColor(): string {
-		return this._hoverColor;
-	}
-
-	public set hoverColor(value: string) {
-		this._hoverColor = value;
-	}
-
-	public get fontSize(): string {
-		return this._fontSize;
-	}
-
-	public set fontSize(value: string) {
-		this._fontSize = value;
-	}
-
-	public get fontFamily(): string {
-		return this._fontFamily;
-	}
-
-	public set fontFamily(value: string) {
-		this._fontFamily = value;
-	}
-
-	constructor(
-		id: string,
-		text: string,
-		variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED',
-		content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT_ICON',
-		hoverStyle: 'LEFT_TO_RIGHT' | 'BOTH_SIDES' | 'SHUTTER_UP' | 'SHUTTER_DOWN' | 'GLOW' | 'NEON_BORDER' | 'FILL' | 'NONE' = 'LEFT_TO_RIGHT',
-		borderAngle: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL',
-		state: 'ENABLED' | 'DISABLED' = 'ENABLED',
-		colorDetection: boolean = true,
-		hoverColorDetection: boolean = true,
-		i18n: boolean = false,
-		direction: 'ltr' | 'rtl' = 'ltr',
-		width: string = 'fit-content',
-		height: string = 'fit-content',
-		icon: string = 'favorite',
-		iconStyle: 'filled' | 'outlined' | 'round' | 'sharp' | 'two-tone' = 'filled',
-		color: string = '#000000',
-		backgroundColor: string = '#ffffff',
-		hoverColor: string = '#0000aa',
-		fontSize: string = '1.25vw',
-		fontFamily: string = 'initial'
-	) {
-		if (id) this.id = id;
-		if (text) this.text = text;
-		this.variation = variation;
-		this.content = content;
-		this.hoverStyle = hoverStyle;
-		this.borderAngle = borderAngle;
-		this.state = state;
-		this.colorDetection = colorDetection;
-		this.hoverColorDetection = hoverColorDetection;
-		this.i18n = i18n;
-		this.direction = direction;
-		this.width = width;
-		this.height = height;
-		this.icon = icon;
-		this.iconStyle = iconStyle;
-		this.color = color;
-		this.backgroundColor = backgroundColor;
-		this.hoverColor = hoverColor;
-		this.fontSize = fontSize;
-		this.fontFamily = fontFamily;
-	}
+  constructor(
+    variation: 'FILLED' | 'OUTLINED' | 'CONTENT_ONLY' = 'FILLED',
+    content: 'TEXT' | 'TEXT_ICON' | 'ICON' = 'TEXT_ICON',
+    hoverStyle:
+      | 'LEFT_TO_RIGHT'
+      | 'BOTH_SIDES'
+      | 'SHUTTER_UP'
+      | 'SHUTTER_DOWN'
+      | 'GLOW'
+      | 'NEON_BORDER'
+      | 'FILL'
+      | 'NONE' = 'LEFT_TO_RIGHT',
+    borderRadius: 'NORMAL' | 'ROUND' | 'SHARP' = 'NORMAL',
+    state: 'ENABLED' | 'DISABLED' = 'ENABLED',
+    colorDetection: boolean = true,
+    hoverColorDetection: boolean = true,
+    i18n: boolean = false,
+    icon: string = 'favorite',
+    iconStyle:
+      | 'filled'
+      | 'outlined'
+      | 'round'
+      | 'sharp'
+      | 'two-tone' = 'filled',
+    color: string = '#000000',
+    backgroundColor: string = '#ffffff',
+    hoverColor: string = '#0000aa',
+    borderColor: string = '#000000'
+  ) {
+    this.variation = variation;
+    this.content = content;
+    this.hoverStyle = hoverStyle;
+    this.borderRadius = borderRadius;
+    this.state = state;
+    this.colorDetection = colorDetection;
+    this.hoverColorDetection = hoverColorDetection;
+    this.i18n = i18n;
+    this.icon = icon;
+    this.iconStyle = iconStyle;
+    this.color = color;
+    this.backgroundColor = backgroundColor;
+    this.hoverColor = hoverColor;
+    this.borderColor = borderColor;
+  }
 }

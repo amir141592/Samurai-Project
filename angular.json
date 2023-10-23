@@ -2,11 +2,12 @@
 	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
 	"version": 1,
 	"cli": {
-		"packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "950ac9df-6d36-4313-90b3-3e885951740c"
 	},
 	"newProjectRoot": "projects",
 	"projects": {
-		"samurai-UI": {
+		"Atlas-UI": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -40,7 +41,7 @@
 			},
 			"root": "",
 			"sourceRoot": "src",
-			"prefix": "samurai",
+			"prefix": "atlas",
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:browser",
@@ -86,10 +87,10 @@
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "samurai-UI:build:production"
+							"browserTarget": "Atlas-UI:build:production"
 						},
 						"development": {
-							"browserTarget": "samurai-UI:build:development"
+							"browserTarget": "Atlas-UI:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
@@ -97,7 +98,7 @@
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "samurai-UI:build"
+						"browserTarget": "Atlas-UI:build"
 					}
 				},
 				"test": {
@@ -117,7 +118,7 @@
 			"projectType": "library",
 			"root": "projects/button",
 			"sourceRoot": "projects/button/src",
-			"prefix": "samurai",
+			"prefix": "atlas",
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:ng-packagr",
@@ -147,7 +148,7 @@
 			"projectType": "library",
 			"root": "projects/radial-menu",
 			"sourceRoot": "projects/radial-menu/src",
-			"prefix": "samurai",
+			"prefix": "atlas",
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:ng-packagr",
@@ -177,7 +178,7 @@
 			"projectType": "library",
 			"root": "projects/paginator",
 			"sourceRoot": "projects/paginator/src",
-			"prefix": "samurai",
+			"prefix": "atlas",
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:ng-packagr",

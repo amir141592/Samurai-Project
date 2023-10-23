@@ -4,7 +4,7 @@ Make your app stylish with pre-styled buttons
 
 ## Features Overview
 
-This component has:
+This directive has:
 
 - 3 Variations
 - 3 Content Types
@@ -23,7 +23,7 @@ to text, text and icon or just icon to get the right attention and priority you 
 
 ## Installation
 
-This component supports **Angular 16 and higher**
+This directive supports **Angular 16 and higher**
 
 Run the code below in your project terminal:
 
@@ -31,19 +31,19 @@ Run the code below in your project terminal:
 ng add @kuro-samurai/ngx-samurai-button
 ```
 
-This command will prompt you to whether install material icon font package  
-or not. I recommend you to use icon for buttons. If you installed material icon,  
+This command will install material icon font package.  
 The styles.scss file of your project will be updated with line  
-`@import "@material-design-icons/font";` at top of it.
-
-_Note: If you didn't install material icon, just use content type of `'TEXT'`  
-and if later on you wanted to use icons, reinstall the package._
+`@import "@material-design-icons/font";` at top of it and  
+some Samurai button classes for buttons.
 
 ## Use
 
-1. Import the component
+    Selector: samuraiButton
+    Type: Standalone
 
-   - If your component is standalone, import the component to your  
+1. Import the directive
+
+   - If your component is standalone, import the directive to your  
      @Component decorator:
 
      ```typescript
@@ -72,13 +72,17 @@ and if later on you wanted to use icons, reinstall the package._
    ```
 
    In the parenthesis use shortcut `ctrl + space` or `command + space` to see available values.  
-   All parameters have default values so you don't need to pass all values.  
-   Refer to properties table below for values and defaults.
+   All parameters have default values so you don't need to pass all values.
 
-3. Then pass the config object to component input:
+   _Note: Refer to properties table below for values and defaults.  
+   You can either pass each property individually or pass  
+   config object, If you do both, values in config object will overwrite  
+   individual values!_
+
+3. Pass the config object to directive input:
 
    ```html
-   <samurai-button [config]="buttonConfig"></samurai-button>
+   <button samuraiButton [config]="buttonConfig"></button>
    ```
 
 ### Button With Action
@@ -95,29 +99,29 @@ you can pass a function to it like this:
 2. Then pass it to property `btnAction`:
 
    ```html
-   <samurai-button [config]="buttonConfig" [btnAction]="foo"></samurai-button>
+   <button samuraiButton [config]="buttonConfig" [btnAction]="foo"></button>
    ```
 
 If you have complex action to happen after button click,  
-bind your action to event `$btnClick` like this:
+bind your action to event `click` like this:
 
 ```html
-<samurai-button [config]="buttonConfig" ($btnClick)="foo($event)"></samurai-button>
+<button samuraiButton [config]="buttonConfig" (click)="foo()"></button>
 ```
-
-The $event value is button id and the type is string.
 
 ### Using Pre-Styled Button
 
 Assign one of the values in properties table blow to property (input) `preStyled`:
 
 ```html
-<samurai-button id="1" text="Samurai" preStyled="PRIMARY_TEXT"></samurai-button>
+<button samuraiButton preStyled="PRIMARY_TEXT"></button>
 ```
 
 More pre-styled buttons will be added soon.
 
-_Note: If you pass both preStyled and config, values in config has priority._
+_Warning: If you pass both preStyled and config, values in config has priority._
+
+_Note: you can overwrite styles with css or add additional styles to button like changing padding, shadow and .etc_
 
 ## Preview
 
@@ -135,18 +139,6 @@ For Live demo visit [Github page for Samurai UI (Beta)](https://amir141592.githu
   </tr>
  </thead>
  <tbody>
-  <tr>
-   <td>id</td>
-   <td>A unique id in the parent component (or all rendered components) for the button.</td>
-   <td>any string</td>
-   <td><code>'1'</code></td>
-  </tr>
-  <tr>
-   <td>text</td>
-   <td>Set button text.</td>
-   <td>any string</td>
-   <td><code>'Samurai'</code></td>
-  </tr>
   <tr>
 	<td>config</td>
 	<td>
@@ -187,7 +179,7 @@ For Live demo visit [Github page for Samurai UI (Beta)](https://amir141592.githu
    <td><code>'NONE'</code></td>
   </tr>
   <tr>
-   <td>borderAngle</td>
+   <td>borderRadius</td>
    <td>Set button border radius based on UI/UX guidelines.</td>
    <td><code>'NORMAL'</code>, <code>'ROUND'</code>, <code>'SHARP'</code></td>
    <td><code>'NORMAL'</code></td>
@@ -200,7 +192,7 @@ For Live demo visit [Github page for Samurai UI (Beta)](https://amir141592.githu
   </tr>
   <tr>
 	 <td>colorDetection</td>
-	 <td>Control auto text and icon color detection feature when variation is <code>'FILLED'</code>.</td>
+	 <td>Control auto text and icon color detection feature when variation is <code>'FILLED'</code> based on background color you passed.</td>
 	 <td><code>true</code>, <code>false</code></td>
 	 <td><code>true</code></td>
   </tr>
@@ -220,24 +212,6 @@ For Live demo visit [Github page for Samurai UI (Beta)](https://amir141592.githu
 	 <td><code>true</code></td>
   </tr>
   <tr>
-	 <td>direction</td>
-	 <td>Set button content direction for localized button.</td>
-	 <td><code>'ltr'</code>, <code>'rtl'</code></td>
-	 <td><code>'ltr'</code></td>
-  </tr>
-  <tr>
-	 <td>width</td>
-	 <td>Set button width.</td>
-	 <td>any css <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width" target="_blank" rel="noopener noreferrer">width</a></td>
-	 <td><code>'fit-content'</code></td>
-  </tr>
-  <tr>
-	 <td>height</td>
-	 <td>Set button height.</td>
-	 <td>any css <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height" target="_blank" rel="noopener noreferrer">height</a></td>
-	 <td><code>'fit-content'</code></td>
-  </tr>
-  <tr>
    <td>icon</td>
    <td>
     set button icon based on material icons names. Just pass icon name to this property. Refer to
@@ -254,7 +228,7 @@ For Live demo visit [Github page for Samurai UI (Beta)](https://amir141592.githu
   </tr>
   <tr>
    <td>color</td>
-   <td>Set text and icon color for the button.</td>
+   <td>Set text and icon color for the button. If color detection is enabled just pass background color.</td>
    <td>any color string in format of hexadecimal</td>
    <td><code>'#000000'</code></td>
   </tr>
@@ -266,28 +240,16 @@ For Live demo visit [Github page for Samurai UI (Beta)](https://amir141592.githu
   </tr>
   <tr>
    <td>hoverColor</td>
-   <td>Set button hover effect color.</td>
+   <td>Set button hover effect color. If hover color detection is enabled just pass background color.</td>
    <td>any color string in format of hexadecimal</td>
    <td><code>'#0000aa'</code></td>
-  </tr>
-  <tr>
-   <td>fontSize</td>
-   <td>Set button font and icon size.</td>
-   <td>any css <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size" target="_blank" rel="noopener noreferrer">font-size</a></td>
-   <td><code>'24px'</code></td>
-  </tr>
-  <tr>
-   <td>fontFamily</td>
-   <td>Set button font family.</td>
-   <td>any css <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family" target="_blank" rel="noopener noreferrer">font-family</a></td>
-   <td><code>'initial'</code></td>
   </tr>
  </tbody>
 </table>
 
 ## Related Resources
 
-This component is part of [Samurai UI](https://github.com/amir141592/Samurai-Project) project.
+This directive is part of [Samurai UI](https://github.com/amir141592/Samurai-Project) project.
 
 ## Future Plans
 
@@ -302,13 +264,17 @@ The following features will be added soon:
   color and background color ✅
 - Adding support for i18n (Internationalization) ✅
 - Implementing ARIA support for people using AT ✅
+- Transforming component to directive for better developer exprience ✅
 
 ## Developer Words
 
-I learned programming for free on the web. Now I want to return  
-the love to programmers community. I plan to make a free UI kit for  
+I learned programming from other developers on the web. Now I want to return  
+the love to software developers community. I plan to make a free UI kit for  
 angular and this package is one of many free packages I will publish on npm.
 
 ## Contributors
 
 - Developer: [Amir Allahdadian](https://github.com/amir141592)
+  - Email: amir.allahdadian@gmail.com
+  - Whats App: +989900045145
+  - Discord: -a-
