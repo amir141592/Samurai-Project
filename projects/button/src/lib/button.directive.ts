@@ -157,8 +157,7 @@ export class SamuraiButtonDirective implements OnInit, AfterContentInit {
         }`
       );
 
-      if (this.config?.content == 'TEXT_ICON')
-        element.style.paddingRight = '8px';
+      if (this.content == 'TEXT_ICON') element.style.marginRight = '8px';
 
       this.element.nativeElement.prepend(element);
     }
