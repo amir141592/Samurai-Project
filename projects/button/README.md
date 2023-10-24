@@ -32,9 +32,9 @@ ng add @kuro-samurai/ngx-samurai-button
 ```
 
 This command will install material icon font package.  
-The styles.scss file of your project will be updated with line  
-`@import "@material-design-icons/font";` at top of it and  
-some Samurai button classes for buttons.
+The samurai-styles.css file will be created in the root  
+of your project and it will be added to your angular.json  
+project styles
 
 ## Use
 

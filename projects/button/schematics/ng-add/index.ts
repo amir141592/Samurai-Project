@@ -3,10 +3,11 @@ import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
 
 export function ngAdd(): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.addTask(new NodePackageInstallTask());
+    let content: any;
 
-    const content: Buffer | null = tree.read('./src/styles.scss');
-    let content2Append = `.samurai-button {
+    let content2Append = `@import "@material-design-icons/font";
+		
+		.samurai-button {
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -18,18 +19,17 @@ export function ngAdd(): Rule {
 				overflow: hidden;
 				font-size: 1.25vw;
 				cursor: pointer;
+			}
 
-				.samurai-before {
-					position: absolute;
-					z-index: -1;
-				}
+			.samurai-before {
+				position: absolute;
+				z-index: -1;
 			}
 			
 			.samurai-text-underline:hover {
 				text-decoration: underline;
 			}
 			
-			// ? LEFT_TO_RIGHT
 			.samurai-left-to-right .samurai-before {
 				top: 0;
 				left: 0;
@@ -42,7 +42,6 @@ export function ngAdd(): Rule {
 				width: 100%;
 			}
 			
-			// ? SHUTTER_UP
 			.samurai-shutter-up .samurai-before {
 				width: 100%;
 				height: 0%;
@@ -55,7 +54,6 @@ export function ngAdd(): Rule {
 				height: 100%;
 			}
 			
-			// ? SHUTTER_DOWN
 			.samurai-shutter-down .samurai-before {
 				width: 100%;
 				height: 0%;
@@ -68,7 +66,6 @@ export function ngAdd(): Rule {
 				height: 100%;
 			}
 			
-			// ? DISABLED
 			.samurai-disabled {
 				position: absolute;
 				width: 100%;
@@ -77,16 +74,18 @@ export function ngAdd(): Rule {
 				background-color: hsla(0, 0%, 50%, 0.6);
 			}\n`;
 
-    let strContent: string = '';
+    context.addTask(new NodePackageInstallTask());
+
+    content = tree.readJson('angular.json');
 
     if (content) {
-      strContent = content.toString();
+      tree.create('./src/samurai-styles.css', content2Append);
 
-      if (!strContent.includes('@import "@material-design-icons/font"'))
-        content2Append =
-          '@import "@material-design-icons/font";\n' + content2Append;
+      content.projects[
+        Object.keys(content.projects)[0]
+      ].architect.build.options.styles.push('src/samurai-styles.css');
 
-      tree.overwrite('./src/styles.scss', content2Append + strContent);
+      tree.overwrite('angular.json', JSON.stringify(content));
     }
 
     return tree;
