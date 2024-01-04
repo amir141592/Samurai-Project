@@ -1,14 +1,14 @@
 {
   "name": "@kuro-samurai/ngx-samurai-button",
-  "version": "3.1.1",
+  "version": "3.1.3",
   "scripts": {
     "build": "tsc -p tsconfig.schematics.json",
     "postbuild": "copyfiles schematics/schema.json schematics/*/files/** schematics/collection.json ../../dist/button/"
   },
   "peerDependencies": {
-    "@angular/common": "^16.0.0",
-    "@angular/core": "^16.0.0",
-    "@material-design-icons/font": "^0.14.7"
+    "@angular/common": ">=16.0.0",
+    "@angular/core": ">=16.0.0",
+    "@material-design-icons/font": ">=0.14.7"
   },
   "dependencies": {
     "tslib": "^2.3.0"

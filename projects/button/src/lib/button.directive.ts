@@ -3,17 +3,22 @@ import {
   Directive,
   ElementRef,
   HostListener,
+  Inject,
   Input,
   OnInit,
 } from '@angular/core';
 import { SamuraiButtonConfig } from './config.class';
+import { DOCUMENT } from '@angular/common';
 
 @Directive({
   selector: '[samuraiButton]',
   standalone: true,
 })
 export class SamuraiButtonDirective implements OnInit, AfterContentInit {
-  constructor(private element: ElementRef<HTMLButtonElement>) {}
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private element: ElementRef<HTMLButtonElement>
+  ) {}
 
   private text: string = '';
 
@@ -110,8 +115,8 @@ export class SamuraiButtonDirective implements OnInit, AfterContentInit {
   private backgroundColorHSL?: { h: number; s: number; l: number };
 
   private setContent(): void {
-    let beforeElement = document.createElement('span');
-    let disabledElement = document.createElement('span');
+    let beforeElement = this.document.createElement('span');
+    let disabledElement = this.document.createElement('span');
 
     this.element.nativeElement.innerText = '';
     this.element.nativeElement.setAttribute('title', this.text);
@@ -131,8 +136,8 @@ export class SamuraiButtonDirective implements OnInit, AfterContentInit {
     // this.element.nativeElement.style.height = 'fit-content';
 
     if (this.text && (this.content == 'TEXT' || this.content == 'TEXT_ICON')) {
-      let element = document.createElement('p');
-      let text = document.createTextNode(this.text);
+      let element = this.document.createElement('p');
+      let text = this.document.createTextNode(this.text);
 
       element.appendChild(text);
 
@@ -144,8 +149,8 @@ export class SamuraiButtonDirective implements OnInit, AfterContentInit {
     }
 
     if (this.content == 'TEXT_ICON' || this.content == 'ICON') {
-      let element = document.createElement('span');
-      let icon = document.createTextNode(this.icon);
+      let element = this.document.createElement('span');
+      let icon = this.document.createTextNode(this.icon);
 
       element.appendChild(icon);
 

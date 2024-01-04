@@ -82,7 +82,7 @@ project styles
 3. Pass the config object to directive input:
 
    ```html
-   <button samuraiButton [config]="buttonConfig"></button>
+   <button samuraiButton [config]="buttonConfig">Samurai</button>
    ```
 
 ### Button With Action
@@ -99,14 +99,14 @@ you can pass a function to it like this:
 2. Then pass it to property `btnAction`:
 
    ```html
-   <button samuraiButton [config]="buttonConfig" [btnAction]="foo"></button>
+   <button samuraiButton [config]="buttonConfig" [btnAction]="foo">Samurai</button>
    ```
 
 If you have complex action to happen after button click,  
 bind your action to event `click` like this:
 
 ```html
-<button samuraiButton [config]="buttonConfig" (click)="foo()"></button>
+<button samuraiButton [config]="buttonConfig" (click)="foo()">Samurai</button>
 ```
 
 ### Using Pre-Styled Button
@@ -114,7 +114,7 @@ bind your action to event `click` like this:
 Assign one of the values in properties table blow to property (input) `preStyled`:
 
 ```html
-<button samuraiButton preStyled="PRIMARY_TEXT"></button>
+<button samuraiButton preStyled="PRIMARY_TEXT">Samurai</button>
 ```
 
 More pre-styled buttons will be added soon.
@@ -268,9 +268,9 @@ The following features will be added soon:
 
 ## Developer Words
 
-I learned programming from other developers on the web. Now I want to return  
-the love to software developers community. I plan to make a free UI kit for  
-angular and this package is one of many free packages I will publish on npm.
+I learned a lot from other developers on the web. Now I want to return  
+the love to software developers community. I plan to make a UI kit for  
+angular and this package is one of many packages I will publish on npm.
 
 ## Contributors
 
